@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex">
 <link rel="icon" href="assets/lmp-logo.png">
 <title>LMP 足りないピース</title>
-<meta name="description" content="LIFE MAKE PARTNERS｜売上を伸ばすために、足りていないものは何でしょうか。6つのピースで、御社の現在地を診断します。">
+<meta name="description" content="LIFE MAKE PARTNERS｜広告費は上がる。でも、買う人は減っていく。広告以外からお客様が生まれる、新しい顧客獲得の仕組み。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
@@ -18,7 +18,7 @@
   --ink:#222222; --char:#252525; --ink-2:#6B6259; --label:#8A7F73;
   --line:#D8CFC4; --greige:#B9B0A4; --greige-d:#8A7F73; --piece-ivory:#D9CDBB;
   --terra:#C95F42; --terra-d:#B6543A; --terra-l:#E3896C; --terra-soft:#F1DDD3;
-  --band:#252525; --band-2:#2F2C29; --band-line:#45403B; --band-ink:#F6F1E8;
+  --band:#252525; --band-2:#2F2C29; --band-line:#45403B; --band-ink:#F6F1E8; --band-sub:#CFC6BA;
   --line-brand:#06C755;
 }
 *{box-sizing:border-box}
@@ -26,7 +26,7 @@ html{scroll-behavior:smooth;scroll-padding-top:76px;color-scheme:light}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 body{background:var(--ivory);color:var(--ink);font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;font-size:16px;font-weight:400;line-height:1.9;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 h1,h2,h3,p,ol,ul{margin:0}
-h1,h2,h3,.q1,.res-h,.qtext{text-wrap:balance;word-break:auto-phrase;color:var(--ink)}
+h1,h2,h3,.big,.res-h,.qtext{text-wrap:balance;word-break:auto-phrase;color:var(--ink)}
 em{font-style:normal}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--terra);outline-offset:3px}
@@ -46,8 +46,6 @@ a{color:inherit}
 .btn-sm{min-height:40px;padding:0 18px;font-size:13px;gap:8px}
 .btn .ico{width:19px;height:19px;flex:none}
 .btn-sm .ico{width:16px;height:16px}
-.textlink{font-weight:700;color:var(--ink);text-decoration:underline;text-decoration-color:var(--greige);text-underline-offset:5px}
-.textlink:hover{text-decoration-color:var(--ink)}
 
 /* ── ヘッダー ── */
 .top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--ivory) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
@@ -58,16 +56,103 @@ a{color:inherit}
 
 /* ── 共通 ── */
 section.sec{padding:clamp(88px,11vw,140px) 0}
+.alt{background:var(--ivory-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .sec-label{display:flex;align-items:center;gap:12px;margin-bottom:22px;font-size:13px;font-weight:500;color:var(--ink-2);letter-spacing:.06em}
 .sec-label b{font-weight:500;color:var(--label);letter-spacing:.12em}
 .sec-label::after{content:"";width:40px;height:1px;background:var(--greige)}
-.sec h2{font-size:clamp(28px,3.4vw,42px);font-weight:700;line-height:1.45}
-.sec h2 em{color:var(--terra)}
+.sec h2{font-size:clamp(28px,3.4vw,42px);font-weight:700;line-height:1.5}
+.sec h2 em,.big em{color:var(--terra)}
 .sub{margin-top:20px;color:var(--ink-2);max-width:34em}
-.fine{margin-top:16px;font-size:13px;line-height:1.8;color:var(--ink-2);max-width:62em}
+.fine{margin-top:18px;font-size:13px;line-height:1.8;color:var(--ink-2);max-width:64em}
 .pico{width:22px;height:22px;flex:none;overflow:visible}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,96px);align-items:center}
+.diagram{width:100%;height:auto;display:block;overflow:visible}
+.diagram text{font-family:"Noto Sans JP",sans-serif}
 
-/* ── パズル盤面（事業構造を示すUI）── */
+/* ── 01 ファーストビュー ── */
+.hero{padding:clamp(56px,8vw,112px) 0 clamp(72px,9vw,120px)}
+.for{display:flex;align-items:center;gap:14px;margin-bottom:26px;font-size:14px;font-weight:500;color:var(--ink-2)}
+.for::before{content:"";width:32px;height:1px;background:var(--greige)}
+.hero h1{font-size:clamp(36px,5vw,66px);font-weight:900;line-height:1.3;letter-spacing:.01em}
+.hero h1 em{color:var(--terra)}
+.hero .lead{margin-top:32px;font-size:clamp(15px,1.45vw,17px);color:var(--ink-2);max-width:30em}
+.hero .lead strong{color:var(--ink);font-weight:700}
+.hero .ask{margin-top:28px;font-size:clamp(19px,2vw,24px);font-weight:700}
+.fig-cap{margin-top:10px;font-size:12.5px;color:var(--ink-2);text-align:center}
+
+/* ── 02 なぜ苦しくなるのか ── */
+.why-grid{margin-top:56px;display:grid;grid-template-columns:6fr 5fr;gap:clamp(36px,6vw,96px);align-items:center}
+.vflow{list-style:none;padding:0;counter-reset:v}
+.vflow li{position:relative;display:flex;align-items:center;gap:16px;padding:0 0 30px}
+.vflow li::after{content:"";position:absolute;left:19.5px;top:42px;bottom:4px;width:1px;background:var(--greige)}
+.vflow li:last-child{padding-bottom:0}
+.vflow li:last-child::after{display:none}
+.vflow .n{width:40px;height:40px;flex:none;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--char);font-size:13px;font-weight:500;background:var(--ivory-2);font-variant-numeric:tabular-nums}
+.vflow .t{font-size:17px;font-weight:700}
+.vflow li.again .n{border-style:dashed;border-color:var(--terra);color:var(--terra-d)}
+.vflow li.again .t{color:var(--terra-d)}
+.backto{display:inline-flex;align-items:center;gap:8px;margin:18px 0 0 56px;font-size:13px;font-weight:700;color:var(--terra-d)}
+.zero{text-align:left}
+.zero .num{display:block;font-size:clamp(120px,16vw,210px);font-weight:900;line-height:.9;color:var(--terra);letter-spacing:-.04em}
+.zero .big{margin-top:18px;font-size:clamp(24px,2.8vw,34px);font-weight:900;line-height:1.5}
+
+/* ── 03 発想の転換 ── */
+.turn{text-align:center}
+.turn .if{font-size:clamp(24px,3vw,36px);font-weight:700;line-height:1.6}
+.turn .if em{color:var(--terra)}
+.turn .rule{width:1px;height:64px;background:var(--greige);margin:48px auto}
+.turn .big{font-size:clamp(26px,3.4vw,44px);font-weight:900;line-height:1.6;max-width:22em;margin:0 auto}
+.turn .pre{display:block;font-size:clamp(16px,1.7vw,20px);font-weight:500;color:var(--ink-2);margin-bottom:12px;line-height:1.9}
+
+/* ── 04 新しい入口 ── */
+.entry .big{font-size:clamp(28px,3.4vw,42px);font-weight:700;line-height:1.5}
+.entry .body{margin-top:26px;color:var(--ink-2);max-width:30em}
+.entry .body strong{color:var(--ink)}
+.channel{margin-top:40px;padding:24px 28px;border-left:2px solid var(--terra);background:var(--surface);border-radius:0 10px 10px 0}
+.channel p:first-child{font-size:14px;color:var(--ink-2)}
+.channel s{text-decoration-thickness:1px;color:var(--label)}
+.channel p:last-child{margin-top:6px;font-size:clamp(18px,2vw,22px);font-weight:700;line-height:1.6}
+.channel em{color:var(--terra)}
+
+/* ── 05 LMPの思想 ── */
+.thesis{background:var(--band);color:var(--band-ink)}
+.thesis .label{color:var(--greige)}
+.thesis h2{color:var(--band-ink);font-size:clamp(28px,3.6vw,46px);font-weight:900;line-height:1.55;margin-top:20px}
+.thesis h2 s{text-decoration:none;color:var(--greige)}
+.thesis h2 em{color:var(--terra-l)}
+.thesis .name{display:flex;align-items:center;gap:18px;margin-top:48px}
+.thesis .name img{height:64px;width:auto;background:var(--surface);border-radius:10px;padding:8px 12px}
+.thesis .name span{font-size:15px;font-weight:700;letter-spacing:.14em}
+.thesis .body{margin-top:28px;color:var(--band-sub);font-size:clamp(16px,1.6vw,18px);line-height:2.1;max-width:30em}
+.thesis .body strong{color:var(--band-ink);font-weight:700}
+
+/* ── 06 比較 ── */
+.cmp-grid{margin-top:56px;display:grid;grid-template-columns:1fr 1.25fr;gap:20px;align-items:stretch}
+.cmp{padding:clamp(26px,3vw,40px);border-radius:12px}
+.cmp.before{border:1px solid var(--line)}
+.cmp.after{background:var(--char);color:var(--ivory)}
+.cmp h3{font-size:20px;font-weight:700;margin:6px 0 24px}
+.cmp.before h3{color:var(--ink-2)}
+.cmp.after h3{color:var(--ivory)}
+.cmp.after .label{color:var(--greige)}
+.chain{list-style:none;padding:0;display:grid;gap:26px}
+.chain li{position:relative;padding:9px 16px;border-radius:8px;font-size:15px;font-weight:700;border:1px solid var(--line);background:var(--surface)}
+.chain li:not(:last-child)::after{content:"↓";position:absolute;left:50%;bottom:-24px;transform:translateX(-50%);font-size:13px;font-weight:400;color:var(--label)}
+.cmp.before .chain li{color:var(--ink-2)}
+.cmp.before .chain li.end{border-style:dashed;color:var(--label)}
+.cmp.before .chain li.re{border:1px dashed var(--terra);color:var(--terra-d);background:transparent}
+.cmp.after .chain li{background:transparent;border-color:#57514B;color:var(--ivory)}
+.cmp.after .chain li::after{color:var(--greige)}
+.cmp.after .chain li.hot{background:var(--terra);border-color:var(--terra);color:#fff}
+.cmp.after .chain li.keep{background:var(--ivory);border-color:var(--ivory);color:var(--char)}
+.cmp.after .chain{gap:22px}
+.cmp.after .chain li:not(:last-child)::after{bottom:-21px}
+.cmp-copy{margin-top:48px;font-size:clamp(22px,2.6vw,32px);font-weight:900;line-height:1.6}
+.cmp-copy em{color:var(--terra)}
+
+/* ── 07 6つのピース ── */
+.pieces-head{display:grid;grid-template-columns:6fr 5fr;gap:clamp(32px,6vw,88px);align-items:center}
+.board{max-width:460px;justify-self:center;width:100%}
 .puzzle{width:100%;height:auto;overflow:visible;display:block}
 .tn-char{fill:var(--char)} .tn-terra{fill:var(--terra)} .tn-greige{fill:var(--greige)} .tn-greige-d{fill:var(--greige-d)} .tn-ivory{fill:var(--piece-ivory)}
 .puzzle .base{fill:var(--base-piece)}
@@ -75,54 +160,71 @@ section.sec{padding:clamp(88px,11vw,140px) 0}
 .puzzle .seam{stroke:var(--ivory);stroke-width:3;stroke-linejoin:round}
 .puzzle .hole{fill:var(--surface);stroke:var(--terra);stroke-width:2.5;stroke-dasharray:8 7;stroke-linejoin:round}
 .puzzle .cur-line{stroke:var(--char);stroke-width:3.5}
-.puzzle path,.puzzle text{transition:fill .35s ease}
+.puzzle path,.puzzle text{transition:fill .3s ease}
 .puzzle .lbl{font-family:"Noto Sans JP",sans-serif;font-weight:700;font-size:19px;text-anchor:middle;dominant-baseline:central;letter-spacing:.08em}
 .puzzle .bnum{font-family:"Noto Sans JP",sans-serif;font-weight:500;font-size:12px;text-anchor:middle;dominant-baseline:central;letter-spacing:.14em;opacity:.75}
 .puzzle .lb-light{fill:var(--ivory)} .puzzle .lb-dark{fill:var(--char)} .puzzle .lb-gap{fill:var(--terra-d)}
 .puzzle .bp.dim path{fill:var(--base-piece)}
 .puzzle .bp.dim text{fill:var(--label)}
 .puzzle .plate{fill:var(--surface)}
+.pgrid{margin-top:64px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.pcard{display:flex;flex-direction:column;gap:16px;padding:26px 26px 24px;background:var(--surface);border:1px solid var(--line);border-radius:10px;transition:border-color .2s ease}
+.pcard:hover{border-color:var(--char)}
+.pc-head{display:flex;align-items:center;gap:14px}
+.pc-head .pico{width:46px;height:46px}
+.pc-name{font-size:20px;font-weight:700;line-height:1.4;margin-top:2px}
+.tags{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.tags li{font-size:12.5px;font-weight:500;padding:3px 11px;border:1px solid var(--line);border-radius:999px;background:var(--ivory)}
+.pc-fill{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:15.5px;font-weight:700;line-height:1.75}
 
-/* ── STEP1 ファーストビュー ── */
-.hero{padding:clamp(64px,9vw,120px) 0 0}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,96px);align-items:center}
-.for{display:flex;align-items:center;gap:14px;margin-bottom:26px;font-size:13px;color:var(--ink-2)}
-.for::before{content:"";width:32px;height:1px;background:var(--greige)}
-.q1{font-size:clamp(28px,3.6vw,48px);font-weight:900;line-height:1.35;letter-spacing:.01em}
-.needs{list-style:none;padding:0;display:grid;border-top:1px solid var(--line)}
-.needs li{display:flex;align-items:center;gap:16px;padding:14px 4px;border-bottom:1px solid var(--line);font-size:clamp(16px,1.6vw,19px);font-weight:700}
-.needs li .pico{width:26px;height:26px}
-.needs li small{font-size:12px;font-weight:500;color:var(--label);letter-spacing:.1em;width:1.8em;font-variant-numeric:tabular-nums}
-.needs li.last{color:var(--ink)}
-.needs li .and{font-weight:400;color:var(--ink-2);margin-right:.2em}
-.turn{margin-top:clamp(72px,10vw,120px);padding:clamp(56px,8vw,96px) 0 clamp(72px,9vw,112px);border-top:1px solid var(--line);text-align:left}
-.turn .few{font-size:clamp(17px,1.8vw,21px);color:var(--ink-2);line-height:1.9}
-.turn .few strong{color:var(--ink);font-weight:700}
-.turn h1{margin-top:26px;font-size:clamp(38px,5.4vw,72px);font-weight:900;line-height:1.25}
-.turn h1 em{color:var(--terra)}
-.turn .cue{margin-top:34px;display:inline-flex;align-items:center;gap:10px;font-size:14px}
+/* ── 08 6ピースがつながる ── */
+.links{list-style:none;padding:0;margin-top:48px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 8px}
+.links li{display:inline-flex;align-items:center;gap:8px;padding:9px 16px 9px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:15px;font-weight:700}
+.links .to{padding:0;border:0;background:none;color:var(--label);font-weight:400}
+.links li.goal{background:var(--char);border-color:var(--char);color:var(--ivory)}
+.assembly{position:relative;height:200vh;background:var(--ivory)}
+.stage{position:sticky;top:64px;height:calc(100vh - 64px);display:flex;align-items:center;overflow:hidden}
+.stage .wrap{width:100%;display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,6vw,88px);align-items:center}
+.steps{position:relative;min-height:11em}
+.step{position:absolute;inset:0 0 auto 0;opacity:0;transform:translateY(12px);transition:opacity .2s ease,transform .2s ease}
+.step.on{opacity:1;transform:none;transition:opacity .45s ease .22s,transform .45s ease .22s}
+.step h3{font-size:clamp(28px,3.2vw,40px);font-weight:900;line-height:1.45}
+.step h3 em{color:var(--terra)}
+.step p{margin-top:18px;color:var(--ink-2);max-width:26em}
+.ticks{display:flex;gap:8px;margin-top:32px;max-width:320px}
+.ticks i{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden}
+.ticks i b{position:absolute;inset:0;background:var(--char);transform-origin:left;transform:scaleX(0)}
+.ticks i + i b{background:var(--terra)}
+.stage-fig{max-width:560px;justify-self:center;width:100%}
 
-/* ── STEP2 6つの課題 ── */
-.issues{background:var(--ivory-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.issues-grid{margin-top:56px;display:grid;grid-template-columns:5fr 6fr;gap:clamp(32px,6vw,80px);align-items:start}
-.board-sticky{position:sticky;top:104px}
-.board-cap{margin-top:14px;font-size:13px;color:var(--ink-2)}
-.issue-list{display:grid;gap:16px}
-.issue{padding:26px 28px;background:var(--surface);border:1px solid var(--line);border-radius:10px;transition:border-color .25s ease}
-.issue.on{border-color:var(--char)}
-.issue-head{display:flex;align-items:center;gap:14px}
-.issue-head .pico{width:40px;height:40px}
-.issue-head h3{font-size:20px;font-weight:700;line-height:1.4}
-.issue-head .need{display:block;font-size:13px;font-weight:500;color:var(--ink-2)}
-.issue ul{margin-top:16px;padding:0;list-style:none;display:grid;gap:6px}
-.issue li{position:relative;padding-left:18px;font-size:15px;line-height:1.8}
-.issue li::before{content:"";position:absolute;left:2px;top:.8em;width:7px;height:1px;background:var(--greige-d)}
+/* ── 09 収益モデル ── */
+.rev-flow{margin-top:56px;display:grid;grid-template-columns:auto 1fr;gap:20px 28px;align-items:stretch}
+.rev-src{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;padding:24px 22px;border-radius:12px;background:var(--char);color:var(--ivory);text-align:center;min-width:170px}
+.rev-src b{font-size:18px}
+.rev-src small{font-size:12.5px;color:var(--greige)}
+.rev-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;position:relative}
+.rev{padding:24px 26px;background:var(--surface);border:1px solid var(--line);position:relative}
+.rev:first-child{border-radius:12px 0 0 12px}
+.rev:last-child{border-radius:0 12px 12px 0}
+.rev + .rev{border-left:0}
+.rev + .rev::before{content:"＋";position:absolute;left:-13px;top:50%;transform:translateY(-50%);width:26px;height:26px;display:grid;place-items:center;border-radius:50%;background:var(--terra);color:#fff;font-size:14px;font-weight:700;line-height:1}
+.rev h3{font-size:18px;font-weight:700}
+.rev .kind{font-size:12px;color:var(--label);margin-top:2px}
+.rev dl{margin:16px 0 0;display:grid;grid-template-columns:1fr auto;gap:6px 12px;font-size:14px}
+.rev dt{color:var(--ink-2)}
+.rev dd{margin:0;font-weight:700;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.rev .note{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-2)}
+.rev .note strong{color:var(--ink)}
+.rev-copy{margin-top:56px;padding-top:40px;border-top:1px solid var(--line);font-size:clamp(24px,3vw,38px);font-weight:900;line-height:1.55}
+.rev-copy s{text-decoration-thickness:2px;text-decoration-color:var(--greige);color:var(--ink-2);font-weight:700}
+.rev-copy em{color:var(--terra)}
 
-/* ── STEP3・4 自社診断 ── */
+/* ── 10 自社に置き換える（診断）── */
 .check-intro{display:grid;grid-template-columns:7fr 5fr;gap:clamp(32px,6vw,80px);align-items:end}
-.check-intro .sub{max-width:30em}
+.six{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:clamp(17px,1.8vw,21px);font-weight:700}
+.six span{display:inline-flex;align-items:center;gap:8px}
 .start{padding:28px;border-left:2px solid var(--terra)}
-.start p{font-size:18px;font-weight:700;line-height:1.6}
+.start p{font-size:17px;font-weight:700;line-height:1.7}
 .start .btn{margin-top:18px}
 .diag{margin-top:56px;display:grid;grid-template-columns:7fr 5fr;border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
 .diag-main{padding:clamp(26px,4vw,52px);min-height:500px;display:flex;flex-direction:column}
@@ -146,7 +248,7 @@ section.sec{padding:clamp(88px,11vw,140px) 0}
 .res-h mark{background:none;color:var(--terra)}
 .res-note{margin-top:14px;color:var(--ink-2);font-size:15px}
 .gaps{margin:24px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
-.gaps li{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.gaps li{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
 .gaps .pico{grid-row:span 2;width:30px;height:30px}
 .gaps b{font-size:15px}
 .gaps b span{margin-left:8px;font-size:11.5px;font-weight:700;padding:1px 9px;border-radius:999px;background:var(--terra-soft);color:var(--terra-d)}
@@ -159,70 +261,19 @@ section.sec{padding:clamp(88px,11vw,140px) 0}
 .line-add{display:flex;align-items:center}
 .line-add img{display:block;height:36px;width:auto}
 
-/* ── STEP5 LMPが埋める ── */
-.lmp{background:var(--ivory-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.lmp-intro{display:grid;grid-template-columns:6fr 5fr;gap:clamp(32px,6vw,88px);align-items:center}
-.lmp-intro h2{font-size:clamp(28px,3.4vw,42px)}
-.lmp-body{margin-top:28px;font-size:clamp(16px,1.6vw,18px);line-height:2;color:var(--ink-2)}
-.lmp-body strong{color:var(--ink);font-weight:700}
-.lmp-fig{max-width:460px;justify-self:center;width:100%}
-.fit{margin-top:14px;font-size:14px;color:var(--ink-2);text-align:center}
-.fit mark{background:none;color:var(--terra-d);font-weight:700}
-.pgrid{margin-top:64px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.pcard{position:relative;display:flex;flex-direction:column;gap:18px;padding:26px 26px 24px;background:var(--surface);border:1px solid var(--line);border-radius:10px}
-.pcard.is-gap{border:1.5px solid var(--terra)}
-.gap-badge{position:absolute;top:-11px;right:18px;font-size:11.5px;font-weight:700;padding:2px 12px;border-radius:999px;background:var(--terra);color:#fff}
-.pc-head{display:flex;align-items:center;gap:14px}
-.pc-head .pico{width:46px;height:46px}
-.pc-name{font-size:20px;font-weight:700;line-height:1.4;margin-top:2px}
-.tags{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:6px}
-.tags li{font-size:12.5px;font-weight:500;padding:3px 11px;border:1px solid var(--line);border-radius:999px;background:var(--ivory)}
-.pc-fill{margin-top:auto;padding-top:16px;border-top:1px solid var(--line)}
-.pc-fl{font-size:12px;font-weight:700;color:var(--ink-2);letter-spacing:.08em;margin-bottom:4px}
-.pc-fill p:last-child{font-size:14.5px;line-height:1.85}
-
-/* ── STEP6 つながる ── */
-.connect-head{max-width:40em}
-.flow{list-style:none;padding:0;margin:56px 0 0;max-width:820px}
-.flow li{position:relative;display:grid;grid-template-columns:40px 1fr auto;gap:8px 22px;align-items:center;padding:0 0 26px}
-.flow li::after{content:"";position:absolute;left:19.5px;top:42px;bottom:2px;width:1px;background:var(--greige)}
-.flow li:last-child::after{display:none}
-.flow .n{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--char);font-size:13px;font-weight:500;background:var(--ivory);font-variant-numeric:tabular-nums}
-.flow .t{font-weight:700;font-size:17px;line-height:1.5}
-.flow .t small{display:block;margin-top:1px;font-weight:400;font-size:14px;color:var(--ink-2)}
-.flow .by{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px}
-.flow .by span{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;padding:3px 10px 3px 6px;border:1px solid var(--line);border-radius:999px;background:var(--surface);white-space:nowrap}
-.flow .by .pico{width:16px;height:16px}
-
-.assembly{position:relative;height:200vh;background:var(--ivory)}
-.stage{position:sticky;top:64px;height:calc(100vh - 64px);display:flex;align-items:center;overflow:hidden}
-.stage .wrap{width:100%;display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,6vw,88px);align-items:center}
-.steps{position:relative;min-height:11em}
-/* 出ていく見出しを先に消してから、次の見出しを出す（重なって見えないように） */
-.step{position:absolute;inset:0 0 auto 0;opacity:0;transform:translateY(12px);transition:opacity .2s ease,transform .2s ease}
-.step.on{opacity:1;transform:none;transition:opacity .45s ease .22s,transform .45s ease .22s}
-.step h3{font-size:clamp(28px,3.2vw,40px);font-weight:900;line-height:1.4}
-.step h3 em{color:var(--terra)}
-.step p{margin-top:18px;color:var(--ink-2);max-width:26em}
-.ticks{display:flex;gap:8px;margin-top:32px;max-width:320px}
-.ticks i{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden}
-.ticks i b{position:absolute;inset:0;background:var(--char);transform-origin:left;transform:scaleX(0)}
-.ticks i + i b{background:var(--terra)}
-.stage-fig{max-width:560px;justify-self:center;width:100%}
-
-/* ── STEP7 ご相談 ── */
+/* ── 11 最終CTA ── */
 .contact{background:var(--band);color:var(--band-ink);padding:clamp(88px,11vw,136px) 0}
 .contact .wrap{display:grid;grid-template-columns:5fr 6fr;gap:clamp(36px,7vw,96px);align-items:start}
 .contact .label{color:var(--greige)}
 .contact h2{margin-top:18px;font-size:clamp(28px,3.4vw,42px);font-weight:700;line-height:1.5;color:var(--band-ink)}
 .contact h2 em{color:var(--terra-l)}
-.contact .sub{color:#CFC6BA}
+.contact .sub{color:var(--band-sub)}
 .contact-line{margin-top:40px;padding-top:26px;border-top:1px solid var(--band-line);display:grid;gap:14px}
-.contact-line p{font-size:14px;color:#CFC6BA}
+.contact-line p{font-size:14px;color:var(--band-sub)}
 form{display:grid;gap:18px;padding:clamp(24px,3vw,36px);background:var(--band-2);border:1px solid var(--band-line);border-radius:12px}
 label{display:grid;gap:7px;font-size:13.5px;font-weight:500;color:#E7DFD4}
-input,select,textarea{font:inherit;font-size:16px;padding:13px 15px;border-radius:8px;border:1px solid transparent;background:var(--ivory);color:var(--ink)}
-input:focus,select:focus,textarea:focus{outline:2px solid var(--terra-l);outline-offset:1px}
+input,textarea{font:inherit;font-size:16px;padding:13px 15px;border-radius:8px;border:1px solid transparent;background:var(--ivory);color:var(--ink)}
+input:focus,textarea:focus{outline:2px solid var(--terra-l);outline-offset:1px}
 textarea{min-height:112px;resize:vertical}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 form .btn-primary{margin-top:6px;box-shadow:none;white-space:normal;text-align:center}
@@ -232,19 +283,21 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 @media (max-width:980px){
   .pgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rev-flow{grid-template-columns:1fr}
+  .rev-src{flex-direction:row;min-width:0}
 }
 @media (max-width:880px){
-  .hero-grid,.issues-grid,.check-intro,.diag,.lmp-intro,.contact .wrap,.stage .wrap{grid-template-columns:1fr}
-  .board-sticky{position:static;max-width:420px;margin:0 auto}
+  .split,.why-grid,.pieces-head,.check-intro,.diag,.contact .wrap,.stage .wrap,.cmp-grid{grid-template-columns:1fr}
   .diag-side{border-left:0;border-top:1px solid var(--line)}
   .diag-side .puzzle{max-width:360px;margin:0 auto}
-  .lmp-fig{max-width:380px}
+  .board{max-width:380px}
   .assembly{height:170vh}
   .stage .wrap{gap:4px}
   .stage-fig{order:-1;max-width:380px}
   .steps{min-height:9.5em}
-  .flow li{grid-template-columns:40px 1fr}
-  .flow .by{grid-column:2;justify-content:flex-start}
+  .rev-cards{grid-template-columns:1fr;gap:14px}
+  .rev,.rev:first-child,.rev:last-child{border-radius:12px;border-left:1px solid var(--line)}
+  .rev + .rev::before{left:50%;top:-20px;transform:translateX(-50%)}
   .two{grid-template-columns:1fr}
   .line-card{grid-template-columns:1fr}
 }
@@ -255,6 +308,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   .ans{grid-template-columns:1fr}
   .ans button{min-height:56px}
   .res-cta .btn,.start .btn{flex:1 1 100%;width:100%}
+  .cmp.after .chain{grid-template-columns:1fr}
+  .cmp.after .chain li:nth-child(4)::after{content:"↓"}
 }
 </style>
 </head>
@@ -263,66 +318,225 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <div class="wrap">
     <a class="brand" href="#top"><img src="assets/lmp-logo.png" alt="LIFE MAKE PARTNER'S" width="65" height="40"></a>
     <div class="hdr">
-      <a class="btn btn-primary btn-sm" href="#check">足りないピースを診断</a>
+      <a class="btn btn-primary btn-sm" href="#contact">相談する</a>
       <a class="btn btn-line btn-sm" href="https://lin.ee/ZbhfV7X"><svg class="ico" data-line-ico aria-hidden="true"></svg>LINE</a>
     </div>
   </div>
 </header>
 
 <main id="top">
-  <!-- STEP1｜前提を提示する -->
+  <!-- 01｜業界課題 -->
   <section class="hero">
+    <div class="wrap split">
+      <div>
+        <p class="for">不動産会社の経営者の方へ</p>
+        <h1>広告費は上がる。<br>でも、<em>買う人は減っていく。</em></h1>
+        <p class="lead">ポータルサイト、Web広告、反響課金。<br>不動産会社が取り合っているのは、<strong>すでに「家を探し始めた人」</strong>です。その限られた顧客を、多くの会社が同じ場所で奪い合っています。</p>
+        <p class="ask">この集客を、いつまで続けますか？</p>
+      </div>
+      <figure style="margin:0">
+        <svg class="diagram" id="rivalry" viewBox="0 0 460 420" role="img" aria-label="多くの不動産会社が、ポータル・Web広告・反響課金を通じて、家を探し始めた同じ少数の人を奪い合っている図"></svg>
+        <figcaption class="fig-cap">同じ場所で、同じお客様を取り合う</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 02｜なぜ苦しくなるのか -->
+  <section class="sec alt" id="why">
     <div class="wrap">
-      <div class="hero-grid">
+      <p class="sec-label"><b>01</b>なぜ苦しくなるのか</p>
+      <h2>広告を増やしても、<br><em>お客様そのものが増えるわけではない。</em></h2>
+      <div class="why-grid">
         <div>
-          <p class="for">地域企業・不動産会社・保険会社の経営者の方へ</p>
-          <p class="q1">売上を伸ばすために、<br>足りていないものは<br>何でしょうか。</p>
+          <p class="label" style="margin-bottom:22px">従来の不動産営業</p>
+          <ol class="vflow">
+            <li><span class="n">01</span><span class="t">広告費をかける</span></li>
+            <li><span class="n">02</span><span class="t">今すぐ客を集める</span></li>
+            <li><span class="n">03</span><span class="t">他社と比較される</span></li>
+            <li><span class="n">04</span><span class="t">価格・条件で競争する</span></li>
+            <li><span class="n">05</span><span class="t">成約</span></li>
+            <li class="again"><span class="n">↺</span><span class="t">また次の顧客を広告で探す</span></li>
+          </ol>
+          <p class="backto">↑ 01 に戻る</p>
         </div>
-        <ol class="needs" id="needs" aria-label="事業を伸ばすために必要な6つの仕組み"></ol>
-      </div>
-      <div class="turn">
-        <p class="few"><strong>すべて揃っている会社は、意外と多くありません。</strong><br>では、御社はどうでしょうか。</p>
-        <h1>あなたの会社に、<br><em>足りないピース</em>は<br>何ですか？</h1>
-        <a class="cue textlink" href="#issues">6つのピースを確かめる ↓</a>
+        <div class="zero">
+          <span class="num" aria-hidden="true">0</span>
+          <p class="big">成約するたびに、<br>また<em>「ゼロ」</em>から集客する。</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- STEP2｜6つの課題を視覚化する -->
-  <section class="sec issues" id="issues">
+  <!-- 03｜発想の転換 -->
+  <section class="sec turn" id="turn">
     <div class="wrap">
-      <p class="sec-label"><b>01</b>6つの課題</p>
-      <h2>事業を伸ばすために必要な、<br><em>6つのピース</em>。</h2>
-      <p class="sub">ピースが一つ欠けるだけで、頑張りが売上につながりにくくなります。御社にも、心当たりはありませんか。</p>
-      <div class="issues-grid">
-        <div class="board-sticky">
-          <svg class="puzzle" id="issueBoard" viewBox="-44 -44 568 408" role="img" aria-label="営業・法人開拓・顧客育成・商談・管理・収益の6ピースでできたパズル"></svg>
-          <p class="board-cap" id="issueCap">6つのピースが揃って、はじめて事業がまわります。</p>
+      <p class="if">もし、<em>広告以外から</em>お客様が生まれたら？</p>
+      <div class="rule" aria-hidden="true"></div>
+      <p class="big"><span class="pre">家を探している人を、広告で追いかけるのではなく、</span><em>家を探し始める前から、</em><br>関係をつくることはできないか。</p>
+    </div>
+  </section>
+
+  <!-- 04｜新しい入口＝地域企業 -->
+  <section class="sec alt entry" id="entry">
+    <div class="wrap split">
+      <div>
+        <p class="sec-label"><b>02</b>新しい入口</p>
+        <p class="big">私たちが考えた新しい入口は、<br><em>「地域企業」</em>でした。</p>
+        <p class="body">不動産会社が一人ひとりの消費者を、広告で探すのではありません。<strong>まず、地域企業との関係をつくる。</strong>そこから、企業、社員、家族へと接点を広げていく。そして、まだ家を探していない段階から、将来のお客様との関係をつくる。</p>
+        <div class="channel">
+          <p><s>法人契約を取りたいから、法人営業をする</s></p>
+          <p>ではなく、<em>法人そのものが、新しい顧客獲得チャネルになる。</em></p>
         </div>
-        <div class="issue-list" id="issueList"></div>
+      </div>
+      <figure style="margin:0">
+        <svg class="diagram" id="rings" viewBox="0 0 440 440" role="img" aria-label="地域企業を中心に、社員、家族へと接点が広がる同心円の図"></svg>
+        <figcaption class="fig-cap">企業 → 社員 → 家族へ。家を探す前から、接点が広がる</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 05｜LMPの思想 -->
+  <section class="sec thesis" id="thesis">
+    <div class="wrap split">
+      <div>
+        <p class="label">Life Make Partners</p>
+        <h2><s>広告で顧客を「買う」会社</s>から、<br><em>顧客との関係が「積み上がる」会社</em>へ。</h2>
+      </div>
+      <div>
+        <div class="name"><img src="assets/lmp-logo.png" alt="LIFE MAKE PARTNER'S" width="104" height="64"><span>LIFE MAKE PARTNERS</span></div>
+        <p class="body">LMPは、<strong>地域企業との接点をつくり、社員・家族との関係を育て、暮らしの相談から、住宅・保険の商談につなげる。</strong><br>そのために必要な仕組みを、ひとつの事業モデルとして構築しました。</p>
       </div>
     </div>
   </section>
 
-  <!-- STEP3・4｜自社診断 → 足りないピースを発見 -->
+  <!-- 06｜従来モデルとLMPを比較 -->
+  <section class="sec" id="compare">
+    <div class="wrap">
+      <p class="sec-label"><b>03</b>従来モデルとLMP</p>
+      <h2>終わる営業と、<br><em>続いていく営業。</em></h2>
+      <div class="cmp-grid">
+        <div class="cmp before">
+          <p class="label">Before</p>
+          <h3>従来の不動産営業</h3>
+          <ol class="chain">
+            <li>広告</li><li>反響</li><li>商談</li><li>成約</li><li class="end">終了</li><li class="re">↺ 再び広告</li>
+          </ol>
+        </div>
+        <div class="cmp after">
+          <p class="label">LMP</p>
+          <h3>LIFE MAKE PARTNERS</h3>
+          <ol class="chain">
+            <li>地域企業</li><li>REALIZE CLUB</li><li>社員・家族</li><li>LIFE JOURNEY</li>
+            <li>継続的な関係</li><li>相談</li><li class="hot">住宅・保険</li><li class="keep">成約後も関係継続</li>
+          </ol>
+        </div>
+      </div>
+      <p class="cmp-copy">「売る相手」を探し続けるのではなく、<br><em>「相談される関係」</em>を増やしていく。</p>
+    </div>
+  </section>
+
+  <!-- 07｜6つのピース -->
+  <section class="sec alt" id="pieces">
+    <div class="wrap">
+      <div class="pieces-head">
+        <div>
+          <p class="sec-label"><b>04</b>6つのピース</p>
+          <h2>この仕組みを実現するために、<br><em>6つのピース</em>を揃えました。</h2>
+          <p class="sub">営業・法人開拓・顧客育成・商談・管理・収益。カードの並びは、右のパズルの位置と同じです。</p>
+        </div>
+        <div class="board">
+          <svg class="puzzle" id="piecesBoard" viewBox="-44 -44 568 408" role="img" aria-label="LMPの6つのピースでできたパズル"></svg>
+        </div>
+      </div>
+      <div class="pgrid" id="plist"></div>
+    </div>
+  </section>
+
+  <!-- 08｜6ピースがつながる -->
+  <section class="sec" id="connect" style="padding-bottom:0">
+    <div class="wrap">
+      <p class="sec-label"><b>05</b>6ピースがつながる</p>
+      <h2>6つのサービスではありません。<br><em>6つがつながって、一つの事業</em>になります。</h2>
+      <ol class="links" id="links"></ol>
+    </div>
+  </section>
+  <div class="assembly" id="assembly">
+    <div class="stage">
+      <div class="wrap">
+        <div>
+          <p class="sec-label" id="stageLabel">つながる前</p>
+          <div class="steps" id="steps">
+            <div class="step on">
+              <h3>6つのピースが、<br>つながると。</h3>
+              <p>法人との接点から継続収益まで。バラバラの仕組みが、一つの流れとして動きはじめる。</p>
+            </div>
+            <div class="step">
+              <h3>広告依存型から、<br><em>関係資産型</em>へ。</h3>
+              <p>それが、LIFE MAKE PARTNERS です。</p>
+            </div>
+          </div>
+          <div class="ticks"><i><b id="tickGather"></b></i><i><b id="tickMerge"></b></i></div>
+        </div>
+        <div class="stage-fig">
+          <svg class="puzzle" id="stagePuzzle" viewBox="-60 -130 600 580" role="img" aria-label="バラバラの6ピースが集まり、LIFE MAKE PARTNERSという1つの事業になるパズル"></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 09｜収益モデル -->
+  <section class="sec alt" id="revenue">
+    <div class="wrap">
+      <p class="sec-label"><b>06</b>収益モデル</p>
+      <h2>一人のお客様から、<br><em>一度だけ売上をつくるのではない。</em></h2>
+      <div class="rev-flow">
+        <div class="rev-src"><small>入口</small><b>法人との関係</b><small>から生まれる</small></div>
+        <div class="rev-cards">
+          <article class="rev">
+            <h3>RC収益</h3>
+            <p class="kind">REALIZE CLUB の入会・継続</p>
+            <dl><dt>入会時</dt><dd>30万円／社</dd><dt>継続中</dt><dd>月1.5万円／社</dd></dl>
+            <p class="note"><strong>20社が継続すれば、月30万円</strong>のストック収益。</p>
+          </article>
+          <article class="rev">
+            <h3>住宅収益</h3>
+            <p class="kind">社員・家族の住まいの相談から</p>
+            <dl><dt>賃貸仲介</dt><dd>10万円</dd><dt>売買仲介</dt><dd>150万円</dd><dt>注文住宅</dt><dd>350万円</dd></dl>
+            <p class="note">1成約あたりの加盟店収益モデル（参考額）</p>
+          </article>
+          <article class="rev">
+            <h3>保険収益</h3>
+            <p class="kind">お金と備えの相談から</p>
+            <dl><dt>変額養老保険</dt><dd>10万円</dd></dl>
+            <p class="note">1成約あたりの加盟店収益モデル（参考額）</p>
+          </article>
+        </div>
+      </div>
+      <p class="rev-copy"><s>広告費を増やす</s>のではなく、<br><em>売上が生まれる入口を増やす。</em></p>
+      <p class="fine">※RC収益は、標準プランをLMPが直接開拓した場合の企画条件（2026年9月時点）。20社の月額例は全社継続を仮定した費用控除前の収入で、導入月・解約・個別条件により変わります。住宅・保険収益は商品・価格・取引条件で変動する参考額で、原価・人件費などの事業費を控除した利益ではありません。いずれも契約・継続・成果を保証するものではありません。</p>
+    </div>
+  </section>
+
+  <!-- 10｜自社に置き換える -->
   <section class="sec" id="check">
     <div class="wrap">
       <div class="check-intro">
         <div>
-          <p class="sec-label"><b>02</b>自社診断</p>
-          <h2>6つすべて、自信を持って<br><em>「できている」</em>と言えますか？</h2>
-          <p class="sub">会社によって、すでに持っているピースもあれば、まだ弱いピース、まったく用意されていないピースもあります。まずは、御社の現在地を確認してください。</p>
+          <p class="sec-label"><b>07</b>自社に置き換える</p>
+          <h2>では、<em>御社の場合</em>は<br>どうでしょうか。</h2>
+          <p class="six" id="six"></p>
+          <p class="sub">すでにあるピースと、まだ足りないピースがあります。</p>
         </div>
         <div class="start">
-          <p>6つの質問で、<br>足りないピースを診断する</p>
-          <button type="button" class="btn btn-primary btn-lg" id="startDiag">自社の足りないピースを診断する <span aria-hidden="true">→</span></button>
+          <p>6つの質問に答えるだけで、<br>御社のパズルが見えてきます。</p>
+          <button type="button" class="btn btn-primary btn-lg" id="startDiag">自社の6つのピースを確認する <span aria-hidden="true">→</span></button>
         </div>
       </div>
       <div class="diag" id="diagnosis">
         <div class="diag-main" id="diagMain" aria-live="polite"></div>
         <aside class="diag-side">
           <p class="label">Your puzzle</p>
-          <svg class="puzzle" id="diagBoard" viewBox="-44 -44 568 408" role="img" aria-label="診断結果のパズル。揃っているピースは埋まり、足りないピースは空いて表示されます"></svg>
+          <svg class="puzzle" id="diagBoard" viewBox="-44 -44 568 408" role="img" aria-label="御社のパズル。揃っているピースは埋まり、足りないピースは空いて表示されます"></svg>
           <ul class="legend">
             <li><i class="lg-ok"></i>できている</li>
             <li><i class="lg-weak"></i>まだ弱い</li>
@@ -344,68 +558,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     </div>
   </section>
 
-  <!-- STEP5｜ここで初めてLMPを登場させる -->
-  <section class="sec lmp" id="lmp">
-    <div class="wrap">
-      <div class="lmp-intro">
-        <div>
-          <p class="sec-label"><b>03</b>LMPが埋める</p>
-          <h2>足りないピースを、<br>一社ですべて作る<br><em>必要はありません。</em></h2>
-          <p class="lmp-body"><strong>LIFE MAKE PARTNERS</strong>は、営業、法人開拓、顧客育成、商談、管理、収益。<br>事業を伸ばすために必要な仕組みを、<strong>ひとつの事業モデルとしてつなぎます。</strong></p>
-        </div>
-        <div class="lmp-fig">
-          <svg class="puzzle" id="lmpBoard" viewBox="-44 -44 568 408" role="img" aria-label="LMPが埋める6つのピース"></svg>
-          <p class="fit" id="lmpFit"></p>
-        </div>
-      </div>
-      <div class="pgrid" id="plist"></div>
-      <p class="fine">※収益は、標準プランをLMPが直接開拓した場合の企画条件（2026年9月時点）による費用控除前の収入例です。相談収益は商品・取引条件で変動し、契約・継続・成果を保証するものではありません。提供機能・連携範囲は構想を含み、導入時に確認します。</p>
-    </div>
-  </section>
-
-  <!-- STEP6｜6つがつながることで完成する -->
-  <section class="sec" id="connect">
-    <div class="wrap">
-      <div class="connect-head">
-        <p class="sec-label"><b>04</b>すべてがつながる</p>
-        <h2>ピースは、<br><em>一つずつでは意味がない。</em></h2>
-        <p class="sub">営業だけでも、集客だけでも、顧客管理だけでもない。6つのピースは、法人との出会いから継続支援まで、一つの流れの中で役割を持っています。</p>
-      </div>
-      <ol class="flow" id="flow"></ol>
-    </div>
-  </section>
-
-  <div class="assembly" id="assembly">
-    <div class="stage">
-      <div class="wrap">
-        <div>
-          <p class="sec-label" id="stageLabel">つながる前</p>
-          <div class="steps" id="steps">
-            <div class="step on">
-              <h3>6つのピースが、<br>つながると。</h3>
-              <p>営業、法人開拓、顧客育成、商談、管理、収益。バラバラの仕組みが、一つの流れとして動きはじめる。</p>
-            </div>
-            <div class="step">
-              <h3><em>「相談が生まれ続ける事業」</em>になる。</h3>
-              <p>それが、LIFE MAKE PARTNERS です。</p>
-            </div>
-          </div>
-          <div class="ticks"><i><b id="tickGather"></b></i><i><b id="tickMerge"></b></i></div>
-        </div>
-        <div class="stage-fig">
-          <svg class="puzzle" id="stagePuzzle" viewBox="-60 -130 600 580" role="img" aria-label="バラバラの6ピースが集まり、LIFE MAKE PARTNERSという1つの事業モデルになるパズル"></svg>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- STEP7｜最後のCTA -->
+  <!-- 11｜最終CTA -->
   <section class="contact" id="contact">
     <div class="wrap">
       <div>
         <p class="label">Contact</p>
-        <h2>御社の場合、<br><em>どのピースから埋めるべきか。</em><br>一緒に整理してみませんか。</h2>
-        <p class="sub">診断結果をもとに、御社の商圏・人員・既存事業に合わせて、どのピースをどう埋められるかを一緒に考えます。</p>
+        <h2>広告費に依存しない、<br><em>新しい顧客獲得の仕組み</em>を。</h2>
+        <p class="sub">御社の商圏、既存事業、営業体制をもとに、LMPを導入した場合の事業モデルを一緒に整理します。</p>
         <div class="contact-line">
           <p>フォームより手軽に、LINEで相談したい方はこちら</p>
           <div class="line-add">
@@ -420,7 +579,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <label>お名前<input name="name" autocomplete="name" required></label>
         </div>
         <label>メールアドレス<input type="email" name="email" autocomplete="email" required></label>
-        <label>ご相談内容・診断結果<textarea name="note" id="note" placeholder="例：法人開拓と管理のピースを、どう埋められるか相談したい"></textarea></label>
+        <label>ご相談内容・診断結果<textarea name="note" id="note" placeholder="例：地域企業からの集客について、自社の場合を相談したい"></textarea></label>
         <button class="btn btn-primary btn-lg" type="submit">LIFE MAKE PARTNERSについて相談する <span aria-hidden="true">→</span></button>
         <p class="sent" id="sent" hidden>送信先のフォーム連携はまだ設定されていません（デザイン案）。公開時に予約フォームやメール送信とつなぎます。</p>
       </form>
@@ -438,9 +597,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     if (parent) parent.appendChild(n);
     return n;
   };
+  const txt = (parent, x, y, s, attrs = {}) => { const t = el("text", { x, y, ...attrs }, parent); t.textContent = s; return t; };
   const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
   const ease = t => t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2;
   const $ = id => document.getElementById(id);
+  const css = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 
   // LINEボタンの吹き出しアイコン
   const LINE_PATH = "M12 3C6.48 3 2 6.63 2 11.1c0 4 3.55 7.36 8.35 8 .32.07.77.21.88.5.1.26.07.66.03.92l-.14.85c-.04.26-.2 1 .88.55 1.08-.46 5.82-3.43 7.94-5.87C21.4 14.44 22 12.84 22 11.1 22 6.63 17.52 3 12 3z";
@@ -449,52 +610,79 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     s.setAttribute("viewBox", "0 0 24 24");
     el("path", { fill: "currentColor", d: LINE_PATH }, s);
   });
-  // LINE公式の友だち追加画像が読めない環境では、同じリンク先の緑ボタンに切り替える
   document.querySelectorAll(".line-add").forEach(box => {
     const img = box.querySelector("img"), official = img.parentElement, fallback = box.querySelector(".btn-line");
     const swap = () => { official.hidden = true; fallback.hidden = false; };
     if (img.complete && img.naturalWidth === 0) swap(); else img.addEventListener("error", swap);
   });
 
-  // ── 6ピース（唯一の基準）──
-  // 課題（STEP2）・診断（STEP4）・LMPのピース（STEP5）・流れ（STEP6）は、すべてこの配列から作る
+  // ── 01 図：同じお客様を取り合う ──
+  (() => {
+    const svg = $("rivalry"), cx = 230, cy = 210;
+    const defs = el("defs", {}, svg);
+    const mk = el("marker", { id: "ah", viewBox: "0 0 10 10", refX: 9, refY: 5, markerWidth: 7, markerHeight: 7, orient: "auto-start-reverse" }, defs);
+    el("path", { d: "M0 0L10 5L0 10z", fill: css("--greige-d") }, mk);
+    const N = 8, R = 170, r0 = 74;
+    const via = ["ポータル", "Web広告", "反響課金"];
+    for (let i = 0; i < N; i++) {
+      const a = -Math.PI / 2 + i * 2 * Math.PI / N;
+      const x = cx + R * Math.cos(a), y = cy + R * Math.sin(a);
+      const x1 = cx + (R - 34) * Math.cos(a), y1 = cy + (R - 34) * Math.sin(a);
+      const x2 = cx + (r0 + 8) * Math.cos(a), y2 = cy + (r0 + 8) * Math.sin(a);
+      el("line", { x1, y1, x2, y2, stroke: css("--greige-d"), "stroke-width": 1.5, "marker-end": "url(#ah)" }, svg);
+      el("rect", { x: x - 42, y: y - 17, width: 84, height: 34, rx: 6, fill: css("--surface"), stroke: css("--line") }, svg);
+      txt(svg, x, y + 1, "不動産会社", { "text-anchor": "middle", "dominant-baseline": "central", "font-size": 12, "font-weight": 500, fill: css("--ink-2") });
+      if (i % 3 === 1) {
+        const mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
+        el("rect", { x: mx - 32, y: my - 11, width: 64, height: 22, rx: 11, fill: css("--char") }, svg);
+        txt(svg, mx, my + 1, via[(i - 1) / 3], { "text-anchor": "middle", "dominant-baseline": "central", "font-size": 11, "font-weight": 700, fill: css("--ivory") });
+      }
+    }
+    el("circle", { cx, cy, r: r0, fill: css("--terra-soft"), stroke: css("--terra"), "stroke-width": 2 }, svg);
+    txt(svg, cx, cy - 12, "家を探し", { "text-anchor": "middle", "dominant-baseline": "central", "font-size": 16, "font-weight": 700, fill: css("--terra-d") });
+    txt(svg, cx, cy + 12, "始めた人", { "text-anchor": "middle", "dominant-baseline": "central", "font-size": 16, "font-weight": 700, fill: css("--terra-d") });
+  })();
+
+  // ── 04 図：企業 → 社員 → 家族 ──
+  (() => {
+    const svg = $("rings"), c = 220;
+    const R = [
+      { r: 205, fill: css("--surface"), stroke: css("--line"), label: "家族", sub: "暮らし・住まいの相談", ink: css("--ink") },
+      { r: 140, fill: css("--base-piece"), stroke: "none", label: "社員", sub: "人生・お金の相談", ink: css("--ink") },
+      { r: 72, fill: css("--char"), stroke: "none", label: "地域企業", sub: "", ink: css("--ivory") }
+    ];
+    R.forEach(o => el("circle", { cx: c, cy: c, r: o.r, fill: o.fill, stroke: o.stroke }, svg));
+    txt(svg, c, c + 1, "地域企業", { "text-anchor": "middle", "dominant-baseline": "central", "font-size": 17, "font-weight": 700, fill: css("--ivory") });
+    [[R[1], 140], [R[0], 205]].forEach(([o, r]) => {
+      const inner = o === R[1] ? 72 : 140, y = c - (r + inner) / 2;
+      txt(svg, c, y - 9, o.label, { "text-anchor": "middle", "dominant-baseline": "central", "font-size": 17, "font-weight": 700, fill: o.ink });
+      txt(svg, c, y + 13, o.sub, { "text-anchor": "middle", "dominant-baseline": "central", "font-size": 11.5, fill: css("--ink-2") });
+    });
+    el("line", { x1: c + 72, y1: c + 30, x2: c + 188, y2: c + 30, stroke: css("--terra"), "stroke-width": 1.5, "stroke-dasharray": "4 4" }, svg);
+    el("circle", { cx: c + 188, cy: c + 30, r: 4, fill: css("--terra") }, svg);
+    txt(svg, c + 128, c + 50, "接点が広がる", { "text-anchor": "middle", "font-size": 12, "font-weight": 700, fill: css("--terra-d") });
+  })();
+
+  // ── 6ピース（07・08・10はすべてこの配列から作る）──
   const PIECES = [
     { key: "sales", no: "01", short: "営業", en: "Sales", tone: "char",
-      need: "営業を育てる仕組み",
-      issues: ["営業力が担当者個人に依存している。", "新人教育に時間がかかる。", "営業のやり方が人によって違う。", "相談されたときに、その場で適切な提案ができない。"],
-      q: "営業のやり方や提案の質が、担当者個人に頼らず揃っていますか？", hint: "新人が育つ流れや、相談にその場で応えられる準備があるか。",
-      items: ["営業マニュアル", "Eラーニング", "AIロープレ", "アオ先生"],
-      fills: "学ぶ・練習する・現場で相談する。相談に応える営業を、仕組みで育てる。" },
+      items: ["営業マニュアル", "Eラーニング", "AIロープレ", "アオ先生"], fills: "相談に応えられる営業を育てる。",
+      q: "相談に応えられる営業を、仕組みで育てられていますか？", hint: "営業力が、担当者個人に依存していないか。" },
     { key: "corp", no: "02", short: "法人開拓", en: "Corporate", tone: "terra",
-      need: "法人との関係をつくる仕組み",
-      issues: ["名刺交換や紹介で社長と接点はできる。", "しかし、その後に案内できるものがない。", "営業連絡だけになり、関係が続かない。", "法人との接点を継続的な相談につなげられていない。"],
-      q: "社長との接点を、継続的な相談につなげられていますか？", hint: "名刺交換や紹介のあと、社長へ案内できるものがあるか。",
-      items: ["PRESIDENT JOURNEY", "PRESIDENT Record", "REALIZE CLUB"],
-      fills: "名刺交換の次に、社長へ案内できるものがある。社長の想いが、導入相談の出発点になる。" },
+      items: ["PRESIDENT JOURNEY", "PRESIDENT Record", "REALIZE CLUB"], fills: "広告以外のお客様との入口をつくる。",
+      q: "広告以外に、お客様が生まれる入口がありますか？", hint: "ポータルや反響広告だけでなく、地域企業などとの接点を持てているか。" },
     { key: "nurture", no: "03", short: "顧客育成", en: "Nurture", tone: "greige",
-      need: "見込み客を育てる仕組み",
-      issues: ["「今すぐ家を買う人」「今すぐ保険を見直す人」しか顧客として見られていない。", "まだ検討前の人との関係を育てる仕組みがない。", "将来の相談客を育てられていない。"],
-      q: "まだ検討前の人との関係を、育てる仕組みがありますか？", hint: "「今すぐ客」以外の、将来の相談客と関わり続けられているか。",
-      items: ["LIFE JOURNEY", "ミオ先生", "LIFE Record"],
-      fills: "物件を探し始める前から、社員と家族の暮らしの相談先になる。" },
+      items: ["LIFE JOURNEY", "ミオ先生", "LIFE Record"], fills: "家を探し始める前から関係を育てる。",
+      q: "家を探し始める前のお客様と、関係をつくれていますか？", hint: "「今すぐ客」だけを追いかけていないか。" },
     { key: "deal", no: "04", short: "商談", en: "Deal", tone: "greige-d",
-      need: "相談を商談につなげる仕組み",
-      issues: ["相談や問い合わせは発生する。", "しかし、誰が、いつ、何を聞き、どの商品を提案するか、商談までの流れが仕組み化されていない。"],
-      q: "相談から商談までの流れが、仕組みになっていますか？", hint: "誰が・いつ・何を聞き・どの商品を提案するかが決まっているか。",
-      items: ["LIFE Consult", "住宅・保険相談導線"],
-      fills: "本人が希望した相談を、面談・比較・意思決定までつなぐ。" },
+      items: ["LIFE Consult", "住宅・保険相談導線"], fills: "相談を具体的な商談につなげる。",
+      q: "暮らしの相談を、具体的な商談につなげる流れがありますか？", hint: "誰が・いつ・何を聞き・何を提案するかが決まっているか。" },
     { key: "ma", no: "05", short: "管理", en: "Management", tone: "char",
-      need: "顧客と案件を管理する仕組み",
-      issues: ["顧客情報、相談内容、案件、担当者、次回アクションが、LINE、Excel、チャット、担当者の頭の中などに分散している。", "対応漏れや追客漏れが起きる。"],
-      q: "顧客・相談・案件・担当・次の行動を、一か所で管理できていますか？", hint: "LINE、Excel、チャット、担当者の頭の中に分散していないか。",
-      items: ["REALIZE OSMA"],
-      fills: "相談・案件・担当・次の行動を一元管理。対応漏れを防ぎ、成約後も次の支援へつなげる。" },
+      items: ["REALIZE OSMA"], fills: "顧客・相談・案件・次の行動を一元管理する。",
+      q: "顧客・相談・案件・次の行動を、一か所で管理できていますか？", hint: "LINE、Excel、担当者の頭の中に分散していないか。" },
     { key: "revenue", no: "06", short: "収益", en: "Revenue", tone: "ivory",
-      need: "売上を積み上げる仕組み",
-      issues: ["売上が住宅・保険などの単発成約に依存している。", "毎月ゼロから案件を探す必要がある。", "継続収益と相談収益が積み上がる構造になっていない。"],
-      q: "単発の成約に頼らず、積み上がる収益の仕組みがありますか？", hint: "毎月ゼロから案件を探す状態になっていないか。",
-      items: ["REALIZE CLUB 月会費", "相談導線"],
-      fills: "RC入会で30万円／社。継続中は月1.5万円／社。そこに住まい・保険の相談収益が重なる。" }
+      items: ["REALIZE CLUB", "住宅", "保険"], fills: "単発売上だけでなく、継続収益を積み上げる。",
+      q: "成約のたびにゼロから集客しなくて済む、継続収益がありますか？", hint: "単発の仲介手数料だけに頼っていないか。" }
   ];
   const LIGHT_LABEL = { char: true, terra: true, "greige-d": true };
   const byKey = Object.fromEntries(PIECES.map(p => [p.key, p]));
@@ -523,165 +711,44 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   const iconSvg = (p, cls = "pico", fillCls = `tn-${p.tone}`) =>
     `<svg class="${cls}" viewBox="-40 -40 240 240" aria-hidden="true"><path class="${fillCls}" d="${p.icon}"/></svg>`;
 
-  // ── パズル盤面：state = ok（ピースの色）/ weak / none（空き）/ yet（未回答）/ cur（回答中）/ lmp（LMPが埋めた）──
+  // ── パズル盤面：ok / weak / none（空き）/ yet（未回答）/ cur（回答中）──
   function drawBoard(svg, stateOf) {
     svg.textContent = "";
     const holes = el("g", {}, svg), pieces = el("g", {}, svg);
     PIECES.forEach(p => {
       const st = stateOf(p), cx = p.x + L/2, cy = p.y + L/2;
       const g = el("g", { class: "bp" }, pieces);
-      let fill, lb;
+      let lb;
       if (st === "none") { el("path", { d: p.d, class: "hole" }, holes); lb = "lb-gap"; }
       else {
-        fill = st === "ok" ? `tn-${p.tone}` : st === "lmp" ? "tn-terra" : st === "weak" ? "weak" : "base";
+        const fill = st === "ok" ? `tn-${p.tone}` : st === "weak" ? "weak" : "base";
         el("path", { d: p.d, class: `${fill} seam${st === "cur" ? " cur-line" : ""}` }, g);
-        lb = (st === "ok" && LIGHT_LABEL[p.tone]) || st === "lmp" ? "lb-light" : st === "weak" ? "lb-gap" : "lb-dark";
+        lb = st === "ok" && LIGHT_LABEL[p.tone] ? "lb-light" : st === "weak" ? "lb-gap" : "lb-dark";
       }
-      el("text", { x: cx, y: cy - 17, class: `bnum ${lb}` }, g).textContent = p.no;
-      el("text", { x: cx, y: cy + 9, class: `lbl ${lb}` }, g).textContent = p.short;
+      txt(g, cx, cy - 17, p.no, { class: `bnum ${lb}` });
+      txt(g, cx, cy + 9, p.short, { class: `lbl ${lb}` });
       p["g_" + svg.id] = g;
     });
   }
 
-  // ── STEP1 必要な6つの仕組み ──
-  $("needs").innerHTML = PIECES.map((p, i) =>
-    `<li class="${i === PIECES.length - 1 ? "last" : ""}"><small>${p.no}</small>${iconSvg(p)}<span>${i === PIECES.length - 1 ? '<span class="and">そして、</span>' : ""}${p.need}。</span></li>`).join("");
-
-  // ── STEP2 6つの課題（盤面と連動）──
-  const issueBoard = $("issueBoard");
-  drawBoard(issueBoard, () => "ok");
-  $("issueList").innerHTML = PIECES.map(p => `
-    <article class="issue" data-key="${p.key}">
-      <div class="issue-head">${iconSvg(p)}<h3><span class="need">${p.no}｜${p.need}</span>${p.nm}</h3></div>
-      <ul>${p.issues.map(t => `<li>${t}</li>`).join("")}</ul>
+  // ── 07 6つのピース（盤面とカードは同じ並び・ホバーで連動）──
+  drawBoard($("piecesBoard"), () => "ok");
+  $("plist").innerHTML = PIECES.map(p => `
+    <article class="pcard" data-key="${p.key}">
+      <div class="pc-head">${iconSvg(p)}<div><p class="label">${p.no} ${p.en}</p><h3 class="pc-name">${p.short}</h3></div></div>
+      <ul class="tags">${p.items.map(t => `<li>${t}</li>`).join("")}</ul>
+      <p class="pc-fill">${p.fills}</p>
     </article>`).join("");
-  const issueEls = [...document.querySelectorAll(".issue")];
-  function focusIssue(key) {
-    PIECES.forEach(p => p.g_issueBoard.classList.toggle("dim", !!key && p.key !== key));
-    issueEls.forEach(a => a.classList.toggle("on", a.dataset.key === key));
-    $("issueCap").textContent = key ? `${byKey[key].no}｜${byKey[key].need}` : "6つのピースが揃って、はじめて事業がまわります。";
-  }
-  if ("IntersectionObserver" in window && matchMedia("(min-width: 881px)").matches) {
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) focusIssue(e.target.dataset.key); });
-    }, { rootMargin: "-45% 0px -45% 0px" });
-    issueEls.forEach(a => io.observe(a));
-    new IntersectionObserver(([e]) => { if (!e.isIntersecting) focusIssue(null); }, { threshold: 0 }).observe($("issueList"));
-  }
-  issueEls.forEach(a => {
-    a.addEventListener("mouseenter", () => focusIssue(a.dataset.key));
+  const focusPiece = key => PIECES.forEach(p => p.g_piecesBoard.classList.toggle("dim", !!key && p.key !== key));
+  document.querySelectorAll(".pcard").forEach(c => {
+    c.addEventListener("mouseenter", () => focusPiece(c.dataset.key));
+    c.addEventListener("mouseleave", () => focusPiece(null));
   });
 
-  // ── STEP3・4 自社診断 ──
-  const ANS = [
-    { v: 2, label: "できている" },
-    { v: 1, label: "一部できている" },
-    { v: 0, label: "できていない" }
-  ];
-  const STATE = { 2: "ok", 1: "weak", 0: "none" };
-  const ans = Array(PIECES.length).fill(null);
-  let cur = 0;
-  const main = $("diagMain"), note = $("note");
-  const gapsNow = () => PIECES.filter((p, i) => ans[i] !== null && ans[i] < 2);
-  const done = () => ans.every(a => a !== null);
-  const marks = list => {
-    const w = list.map(p => `<mark>「${p.short}」</mark>`);
-    return w.length <= 1 ? w.join("") : w.slice(0, -1).join("") + "と" + w[w.length - 1];
-  };
-
-  function renderDiag() {
-    drawBoard($("diagBoard"), p => {
-      const i = PIECES.indexOf(p);
-      return ans[i] === null ? (i === cur ? "cur" : "yet") : STATE[ans[i]];
-    });
-    const N = PIECES.length;
-    if (cur < N) {
-      const p = PIECES[cur];
-      main.innerHTML = `
-        <div class="prog"><span class="label">Question ${cur + 1} / ${N}</span><span class="pname">${p.nm}</span></div>
-        <div class="pbar"><b style="width:${cur / N * 100}%"></b></div>
-        <p class="qtext">${p.q}</p>
-        <p class="qhint">${p.hint}</p>
-        <div class="ans">${ANS.map(a => `<button type="button" data-v="${a.v}">${a.label}</button>`).join("")}</div>
-        ${cur > 0 ? '<button type="button" class="back" data-back>ひとつ前に戻る</button>' : ""}`;
-    } else {
-      const gaps = gapsNow();
-      const head = gaps.length
-        ? `御社には、${marks(gaps)}の<br>${gaps.length}つのピースが不足しています。`
-        : `御社には、6つのピースが揃っています。`;
-      const body = gaps.length
-        ? `<p class="res-note">これは「できていない会社」という評価ではありません。事業を伸ばす余地が、どこにあるかを示しています。すでに揃っているピースは、そのまま御社の強みです。</p>
-           <ul class="gaps">${gaps.map(p => {
-             const a = ans[PIECES.indexOf(p)];
-             return `<li>${iconSvg(p, "pico", a === 0 ? "tn-terra" : "tn-greige")}<b>${p.nm}<span class="${a === 0 ? "none" : ""}">${a === 0 ? "用意されていない" : "まだ弱い"}</span></b><small>${p.need}が、御社の伸びしろです。</small></li>`;
-           }).join("")}</ul>`
-        : `<p class="res-note">土台が揃っている会社ほど、6つのピースを一つの流れとしてつなぐことで、さらに伸ばせる余地があります。</p>`;
-      main.innerHTML = `
-        <div class="prog"><span class="label">Result</span><span class="pname">${N - gaps.length} / ${N} ピースが揃っています</span></div>
-        <div class="pbar"><b style="width:100%"></b></div>
-        <p class="res-h">${head}</p>
-        ${body}
-        <div class="res-cta">
-          <a class="btn btn-primary" href="#lmp">足りないピースの埋め方を見る <span aria-hidden="true">↓</span></a>
-          <a class="btn btn-ghost btn-sm" href="#contact">この結果で相談する</a>
-          <a class="btn btn-line btn-sm" href="https://lin.ee/ZbhfV7X">${LINE_ICO}LINEで詳しく診断</a>
-        </div>
-        <button type="button" class="back" data-reset>もう一度診断する</button>`;
-      note.value = gaps.length
-        ? `【簡易診断の結果】不足しているピース：${gaps.map(p => p.short).join("、")}`
-        : "【簡易診断の結果】6つのピースはすべて揃っている";
-    }
-    renderLmp();
-  }
-
-  main.addEventListener("click", e => {
-    const t = e.target.closest("button");
-    if (!t) return;
-    if (t.dataset.v !== undefined) { ans[cur] = +t.dataset.v; cur++; renderDiag(); main.querySelector("button, a")?.focus({ preventScroll: true }); }
-    else if (t.hasAttribute("data-back")) { cur--; ans[cur] = null; renderDiag(); }
-    else if (t.hasAttribute("data-reset")) { ans.fill(null); cur = 0; renderDiag(); }
-  });
-  $("startDiag").addEventListener("click", () => {
-    $("diagnosis").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
-    setTimeout(() => main.querySelector("button")?.focus({ preventScroll: true }), 450);
-  });
-
-  // ── STEP5 LMPが埋める6つのピース（診断結果と連動）──
-  function renderLmp() {
-    const isDone = done(), gaps = isDone ? gapsNow() : [];
-    const gapKeys = new Set(gaps.map(p => p.key));
-    drawBoard($("lmpBoard"), p => gapKeys.has(p.key) ? "lmp" : "ok");
-    $("lmpFit").innerHTML = !isDone
-      ? `診断すると、御社に足りないピースがここに表示されます。`
-      : gaps.length
-        ? `診断で見つかった${marks(gaps)}のピースを、LMPが埋めます。`
-        : `揃っている6つのピースを、LMPが一つの事業モデルとしてつなぎます。`;
-    $("plist").innerHTML = PIECES.map(p => `
-      <article class="pcard${gapKeys.has(p.key) ? " is-gap" : ""}">
-        ${gapKeys.has(p.key) ? '<span class="gap-badge">御社の不足ピース</span>' : ""}
-        <div class="pc-head">${iconSvg(p, "pico", gapKeys.has(p.key) ? "tn-terra" : `tn-${p.tone}`)}<div><p class="label">${p.en}</p><h3 class="pc-name">${p.nm}</h3></div></div>
-        <ul class="tags">${p.items.map(t => `<li>${t}</li>`).join("")}</ul>
-        <div class="pc-fill"><p class="pc-fl">埋まること</p><p>${p.fills}</p></div>
-      </article>`).join("");
-  }
-  renderDiag();
-
-  // ── STEP6 すべてがつながる流れ（各段階を担うピース）──
-  const FLOW = [
-    ["法人接点", "名刺交換や紹介で生まれた、社長との出会い", ["corp"]],
-    ["PRESIDENT JOURNEY", "社長が、社員を支える方針を自分の言葉にする", ["corp"]],
-    ["REALIZE CLUB", "社員と家族に、人生教育と相談の窓口を届ける", ["corp", "revenue"]],
-    ["社員・家族との接点", "会社を通じて、一人ひとりと関われる", ["nurture"]],
-    ["LIFE JOURNEY", "自分の未来を考え、相談したいことに気づく", ["nurture"]],
-    ["相談", "本人が希望した相談を受け止める", ["deal"]],
-    ["住宅・保険商談", "面談・比較・意思決定まで支える", ["deal", "sales"]],
-    ["REALIZE OSMAで管理", "担当・進捗・次の行動を一元管理する", ["ma"]],
-    ["継続支援", "暮らしが変わるたび、次の相談と収益へ", ["revenue"]]
-  ];
-  $("flow").innerHTML = FLOW.map(([t, s, keys], i) => `
-    <li><span class="n">${String(i + 1).padStart(2, "0")}</span>
-      <span class="t">${t}<small>${s}</small></span>
-      <span class="by">${keys.map(k => `<span>${iconSvg(byKey[k])}${byKey[k].short}</span>`).join("")}</span></li>`).join("");
+  // ── 08 つながる流れ ──
+  const LINKS = [["法人との接点", "corp"], ["社員との関係", "nurture"], ["人生・暮らしの相談", "deal"], ["住宅・保険商談", "sales"], ["顧客管理", "ma"], ["継続収益", "revenue"]];
+  $("links").innerHTML = LINKS.map(([t, k], i) =>
+    `${i ? '<li class="to" aria-hidden="true">→</li>' : ""}<li class="${i === LINKS.length - 1 ? "goal" : ""}">${iconSvg(byKey[k])}${t}</li>`).join("");
 
   // ── 組み上がり演出：バラバラ → 継ぎ目のない1つの塊 → ロゴ ──
   const stage = $("stagePuzzle");
@@ -693,7 +760,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   PIECES.forEach(p => {
     p.sg = el("g", {}, layer);
     el("path", { d: p.d, class: `tn-${p.tone} seam` }, p.sg);
-    el("text", { x: p.x + L/2, y: p.y + L/2, class: "lbl " + (LIGHT_LABEL[p.tone] ? "lb-light" : "lb-dark") }, p.sg).textContent = p.short;
+    txt(p.sg, p.x + L/2, p.y + L/2, p.short, { class: "lbl " + (LIGHT_LABEL[p.tone] ? "lb-light" : "lb-dark") });
   });
   const solid = el("rect", { x: 0, y: 0, width: COLS * L, height: ROWS * L, class: "tn-char", opacity: 0 }, stage);
   const plate = el("rect", { x: 0, y: 0, width: COLS * L, height: ROWS * L, class: "plate", opacity: 0 }, stage);
@@ -701,11 +768,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   const LW = 400, LH = LW * 821 / 1338;
   const logo = el("image", { href: "assets/lmp-logo.png", x: 240 - LW/2, y: 160 - LH/2, width: LW, height: LH }, mark);
   logo.setAttributeNS("http://www.w3.org/1999/xlink", "href", "assets/lmp-logo.png");
-
   const asm = $("assembly");
   const stepEls = [...document.querySelectorAll("#steps .step")];
-  const stageLabel = $("stageLabel");
-  const tickG = $("tickGather"), tickM = $("tickMerge");
+  const stageLabel = $("stageLabel"), tickG = $("tickGather"), tickM = $("tickMerge");
   let lastStep = -1, ticking = false;
   function update() {
     ticking = false;
@@ -740,6 +805,73 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   addEventListener("scroll", onScroll, { passive: true });
   addEventListener("resize", onScroll);
   update();
+
+  // ── 10 自社に置き換える（診断）──
+  $("six").innerHTML = ["営業", "法人との接点", "顧客育成", "相談", "管理", "収益"]
+    .map((t, i) => `<span>${iconSvg(PIECES[i])}${t}。</span>`).join("");
+  const ANS = [{ v: 2, label: "できている" }, { v: 1, label: "一部できている" }, { v: 0, label: "できていない" }];
+  const STATE = { 2: "ok", 1: "weak", 0: "none" };
+  const ans = Array(PIECES.length).fill(null);
+  let cur = 0;
+  const main = $("diagMain"), note = $("note");
+  const marks = list => {
+    const w = list.map(p => `<mark>「${p.short}」</mark>`);
+    return w.length <= 1 ? w.join("") : w.slice(0, -1).join("") + "と" + w[w.length - 1];
+  };
+  function renderDiag() {
+    drawBoard($("diagBoard"), p => {
+      const i = PIECES.indexOf(p);
+      return ans[i] === null ? (i === cur ? "cur" : "yet") : STATE[ans[i]];
+    });
+    const N = PIECES.length;
+    if (cur < N) {
+      const p = PIECES[cur];
+      main.innerHTML = `
+        <div class="prog"><span class="label">Question ${cur + 1} / ${N}</span><span class="pname">${p.nm}</span></div>
+        <div class="pbar"><b style="width:${cur / N * 100}%"></b></div>
+        <p class="qtext">${p.q}</p>
+        <p class="qhint">${p.hint}</p>
+        <div class="ans">${ANS.map(a => `<button type="button" data-v="${a.v}">${a.label}</button>`).join("")}</div>
+        ${cur > 0 ? '<button type="button" class="back" data-back>ひとつ前に戻る</button>' : ""}`;
+      return;
+    }
+    const gaps = PIECES.filter((p, i) => ans[i] < 2);
+    const head = gaps.length
+      ? `御社には、${marks(gaps)}の<br>${gaps.length}つのピースが不足しています。`
+      : `御社には、6つのピースが揃っています。`;
+    const body = gaps.length
+      ? `<p class="res-note">これは「できていない会社」という評価ではありません。事業を伸ばす余地が、どこにあるかを示しています。すでに揃っているピースは、そのまま御社の強みです。</p>
+         <ul class="gaps">${gaps.map(p => {
+           const a = ans[PIECES.indexOf(p)];
+           return `<li>${iconSvg(p, "pico", a === 0 ? "tn-terra" : "tn-greige")}<b>${p.nm}<span class="${a === 0 ? "none" : ""}">${a === 0 ? "用意されていない" : "まだ弱い"}</span></b><small>LMPなら：${p.fills}</small></li>`;
+         }).join("")}</ul>`
+      : `<p class="res-note">土台が揃っている会社ほど、6つのピースを一つの流れとしてつなぐことで、広告に頼らない入口をさらに増やせます。</p>`;
+    main.innerHTML = `
+      <div class="prog"><span class="label">Result</span><span class="pname">${N - gaps.length} / ${N} ピースが揃っています</span></div>
+      <div class="pbar"><b style="width:100%"></b></div>
+      <p class="res-h">${head}</p>
+      ${body}
+      <div class="res-cta">
+        <a class="btn btn-primary" href="#contact">この結果で相談する <span aria-hidden="true">→</span></a>
+        <a class="btn btn-line btn-sm" href="https://lin.ee/ZbhfV7X">${LINE_ICO}LINEで詳しく診断</a>
+      </div>
+      <button type="button" class="back" data-reset>もう一度診断する</button>`;
+    note.value = gaps.length
+      ? `【簡易診断の結果】不足しているピース：${gaps.map(p => p.short).join("、")}`
+      : "【簡易診断の結果】6つのピースはすべて揃っている";
+  }
+  main.addEventListener("click", e => {
+    const t = e.target.closest("button");
+    if (!t) return;
+    if (t.dataset.v !== undefined) { ans[cur] = +t.dataset.v; cur++; renderDiag(); main.querySelector("button, a")?.focus({ preventScroll: true }); }
+    else if (t.hasAttribute("data-back")) { cur--; ans[cur] = null; renderDiag(); }
+    else if (t.hasAttribute("data-reset")) { ans.fill(null); cur = 0; renderDiag(); }
+  });
+  $("startDiag").addEventListener("click", () => {
+    $("diagnosis").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+    setTimeout(() => main.querySelector("button")?.focus({ preventScroll: true }), 450);
+  });
+  renderDiag();
 
   $("form").addEventListener("submit", e => {
     e.preventDefault();
