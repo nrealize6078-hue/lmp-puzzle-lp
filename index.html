@@ -9,229 +9,243 @@
 <meta name="description" content="LIFE MAKE PARTNERS｜あなたの会社に、足りないピースは何ですか？">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&family=IBM+Plex+Mono:wght@500&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
 <style>
 [hidden]{display:none!important}
-/* ブランド色：ロゴの緑 #1A7C3D とハートの赤 */
+/* ── 配色：チャコール / グレージュ / アイボリー / テラコッタ（単一テーマで固定）── */
 :root{
-  --ground:#EEF3EF; --surface:#FAFCFA; --ink:#10261A; --ink-2:#4B5E52; --line:#CFDBD2;
-  --piece:#1A7C3D; --piece-2:#1F6A38; --piece-ink:#F4FAF5; --leaf-soft:#D3EADB; --brand-text:#1A7C3D; --brand-on-band:#8FD9A8;
-  --accent:#E83535; --accent-ink:#FFFFFF; --accent-text:#C42626; --accent-soft:#FBE0E0;
-  --hole:#8A9B90; --band:#0F3A22; --band-ink:#EAF3EC; --band-line:#2A5A3D; --plate:#FFFFFF;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --ground:#0B1510; --surface:#111F17; --ink:#E3EDE6; --ink-2:#9AAEA1; --line:#243A2C;
-    --piece:#1E8A45; --piece-2:#177038; --piece-ink:#F4FAF5; --leaf-soft:#1C3A27; --brand-text:#5CCB86; --brand-on-band:#8FD9A8;
-    --accent:#FF5A5A; --accent-ink:#1A0606; --accent-text:#FF7A7A; --accent-soft:#3D1C1C;
-    --hole:#5E7366; --band:#06100A; --band-ink:#E3EDE6; --band-line:#1D3325; --plate:#FFFFFF;
-  }
-}
-:root[data-theme="dark"]{
-  --ground:#0B1510; --surface:#111F17; --ink:#E3EDE6; --ink-2:#9AAEA1; --line:#243A2C;
-  --piece:#1E8A45; --piece-2:#177038; --piece-ink:#F4FAF5; --leaf-soft:#1C3A27; --brand-text:#5CCB86; --brand-on-band:#8FD9A8;
-  --accent:#FF5A5A; --accent-ink:#1A0606; --accent-text:#FF7A7A; --accent-soft:#3D1C1C;
-  --hole:#5E7366; --band:#06100A; --band-ink:#E3EDE6; --band-line:#1D3325; --plate:#FFFFFF;
+  --ivory:#F6F1E8; --surface:#FBF8F2; --ivory-2:#EFE7DB; --ivory-3:#EDE4D8;
+  --ink:#222222; --char:#252525; --ink-2:#6B6259; --label:#8A7F73;
+  --line:#D8CFC4; --greige:#B9B0A4; --greige-d:#8A7F73; --piece-ivory:#E3D8C8;
+  --terra:#C95F42; --terra-d:#B6543A; --terra-l:#E3896C; --terra-soft:#F1DDD3;
+  --band:#252525; --band-2:#2F2C29; --band-line:#45403B; --band-ink:#F6F1E8;
+  --line-brand:#06C755;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
+html{scroll-behavior:smooth;scroll-padding-top:72px;color-scheme:light}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
-body{background:var(--ground);color:var(--ink);font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--ivory);color:var(--ink);font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;font-size:16px;font-weight:400;line-height:1.9;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 h1,h2,h3,p{margin:0}
-h1,h2,h3{text-wrap:balance}
-/* 見出し：ロゴの欧文と同系の、太くすっきりしたゴシック */
-.disp{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;font-weight:900;letter-spacing:.02em;color:var(--ink)}
-.disp em{font-style:normal;color:var(--brand-text)}
-.contact .disp{color:var(--band-ink)}
-.contact .disp em{color:var(--brand-on-band)}
-.mono{font-family:"IBM Plex Mono",ui-monospace,Consolas,monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
-.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+h1,h2,h3{text-wrap:balance;color:var(--ink)}
+em{font-style:normal}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+/* 英字ラベル：細め・小さめ・控えめ */
+.label{font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--label)}
 
-/* header */
-.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--ground) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-.brand{display:flex;align-items:center;text-decoration:none;padding:4px 10px;border-radius:4px;background:var(--plate)}
-.brand img{height:38px;width:auto;display:block}
-/* ボタン：高さ・角丸・余白を1つの型に揃える */
-:root{--line-brand:#06C755}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 28px;border-radius:999px;font-weight:700;font-size:15px;line-height:1.3;letter-spacing:.03em;text-decoration:none;white-space:nowrap;border:1.5px solid transparent;cursor:pointer;font-family:inherit;box-shadow:0 1px 0 rgba(0,0,0,.06);transition:transform .15s ease,box-shadow .15s ease}
-.btn:hover{transform:translateY(-1px);box-shadow:0 8px 18px -8px rgba(0,0,0,.35)}
-.btn:active{transform:none;box-shadow:none}
-.btn-primary{background:var(--accent);color:var(--accent-ink)}
+/* ── ボタン ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 28px;border-radius:999px;font-family:inherit;font-weight:700;font-size:15px;line-height:1.3;letter-spacing:.04em;text-decoration:none;white-space:nowrap;border:1.5px solid transparent;cursor:pointer;transition:background .15s ease,color .15s ease,border-color .15s ease,transform .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:none}
+.btn-primary{background:var(--terra);color:#fff;box-shadow:0 6px 16px -10px rgba(182,84,58,.7)}
+.btn-primary:hover{background:var(--terra-d)}
+.btn-ghost{background:transparent;border-color:var(--char);color:var(--ink)}
+.btn-ghost:hover{background:var(--char);color:var(--ivory)}
 .btn-line{background:var(--line-brand);color:#fff}
-.btn-ghost{border-color:var(--line);color:var(--ink);background:var(--surface);box-shadow:none}
 .btn-sm{min-height:40px;padding:0 18px;font-size:13px;gap:8px}
-.btn .ico{width:20px;height:20px;flex:none}
-.btn-sm .ico{width:17px;height:17px}
-.arrow{font-family:"IBM Plex Mono",monospace}
+.btn .ico{width:19px;height:19px;flex:none}
+.btn-sm .ico{width:16px;height:16px}
+.arrow{font-weight:400}
+
+/* ── ヘッダー ── */
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--ivory) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.brand{display:flex;align-items:center;text-decoration:none}
+.brand img{height:40px;width:auto;display:block}
 .hdr{display:flex;gap:8px;align-items:center}
-.textlink{display:inline-block;margin-top:18px;font-size:14px;font-weight:700;color:var(--ink-2);text-underline-offset:4px}
+
+/* ── ファーストビュー ── */
+.hero{padding:clamp(64px,9vw,120px) 0 clamp(56px,8vw,104px)}
+.hero .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(32px,6vw,88px);align-items:end}
+.eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+.eyebrow::before{content:"";width:32px;height:1px;background:var(--greige)}
+.hero h1{font-size:clamp(34px,4.8vw,62px);font-weight:900;line-height:1.22;letter-spacing:.01em}
+.hero h1 em{color:var(--terra)}
+.lead{font-size:clamp(15px,1.4vw,17px);color:var(--ink-2);max-width:30em}
+.lead strong{color:var(--ink);font-weight:700}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.subcta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;margin-top:18px;font-size:14px;color:var(--ink-2)}
+.textlink{font-weight:700;color:var(--ink);text-decoration:underline;text-decoration-color:var(--greige);text-underline-offset:5px}
+.textlink:hover{text-decoration-color:var(--ink)}
+
+/* ── 共通セクション ── */
+section.sec{padding:clamp(80px,11vw,136px) 0}
+.sec-label{display:flex;align-items:center;gap:12px;margin-bottom:22px;font-size:13px;font-weight:500;color:var(--ink-2);letter-spacing:.06em}
+.sec-label b{font-weight:500;color:var(--label);letter-spacing:.12em}
+.sec-label::after{content:"";width:40px;height:1px;background:var(--greige)}
+.sec h2{font-size:clamp(28px,3.4vw,42px);font-weight:700;line-height:1.45;letter-spacing:.01em}
+.sec h2 em{color:var(--terra)}
+.sub{margin-top:18px;color:var(--ink-2);max-width:36em}
+.fine{margin-top:16px;font-size:13px;line-height:1.8;color:var(--ink-2);max-width:62em}
+
+/* ── パズル ── */
+.puzzle{width:100%;height:auto;overflow:visible;display:block}
+.tn-char{fill:var(--char)} .tn-terra{fill:var(--terra)} .tn-greige{fill:var(--greige)} .tn-greige-d{fill:var(--greige-d)} .tn-ivory{fill:var(--piece-ivory)}
+.puzzle .seam{stroke:var(--ivory);stroke-width:3;stroke-linejoin:round}
+.puzzle .lbl{font-family:"Noto Sans JP",sans-serif;font-weight:700;font-size:19px;text-anchor:middle;dominant-baseline:central;letter-spacing:.08em}
+.puzzle .lb-light{fill:var(--ivory)} .puzzle .lb-dark{fill:var(--char)}
+.puzzle .plate{fill:var(--surface)}
+
+/* ── 組み上がり演出 ── */
+.assembly{position:relative;height:200vh;background:var(--ivory)}
+.stage{position:sticky;top:64px;height:calc(100vh - 64px);display:flex;align-items:center;overflow:hidden}
+.stage .wrap{width:100%;display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,6vw,88px);align-items:center}
+.steps{position:relative;min-height:12em}
+.step{position:absolute;inset:0 0 auto 0;opacity:0;transform:translateY(12px);transition:opacity .45s ease,transform .45s ease}
+.step.on{opacity:1;transform:none}
+.step h3{font-size:clamp(28px,3.2vw,40px);font-weight:900;line-height:1.4}
+.step h3 em{color:var(--terra)}
+.step p{margin-top:18px;color:var(--ink-2);max-width:26em}
+.ticks{display:flex;gap:8px;margin-top:32px;max-width:320px}
+.ticks i{flex:1;height:2px;background:var(--line);position:relative;overflow:hidden}
+.ticks i b{position:absolute;inset:0;background:var(--char);transform-origin:left;transform:scaleX(0)}
+.ticks i + i b{background:var(--terra)}
+.stage-fig{max-width:560px;justify-self:center;width:100%}
+
+/* ── 01 完成図 ── */
+.s02{background:var(--ivory-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.s02 .wrap{display:grid;grid-template-columns:6fr 6fr;gap:clamp(40px,7vw,104px)}
+.flow{list-style:none;margin:44px 0 0;padding:0}
+.flow li{position:relative;display:grid;grid-template-columns:40px 1fr;gap:20px;align-items:start;padding:0 0 30px}
+.flow li::after{content:"";position:absolute;left:19.5px;top:44px;bottom:4px;width:1px;background:var(--greige)}
+.flow li:last-child::after{display:none}
+.flow .n{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--char);font-size:13px;font-weight:500;background:var(--ivory-2);font-variant-numeric:tabular-nums}
+.flow .t{font-weight:700;font-size:17px;line-height:1.5;padding-top:7px}
+.flow .t small{display:block;margin-top:2px;font-weight:400;font-size:14px;color:var(--ink-2)}
+.flow li.hl .n{background:var(--char);color:var(--ivory)}
+.flow li.goal .n{background:var(--terra);border-color:var(--terra);color:#fff}
+.loopnote{margin-left:60px;display:inline-flex;align-items:center;gap:10px;padding:9px 16px;border:1px dashed var(--greige-d);border-radius:999px;font-weight:700;font-size:14px;color:var(--ink)}
+.loopnote .arrow{color:var(--terra)}
+.s02 .fine{margin-left:60px}
+.compare{display:grid;gap:18px;align-content:start;margin-top:72px}
+.cmp{padding:clamp(24px,3vw,34px);border-radius:10px}
+.cmp.before{border:1px solid var(--line);background:transparent;color:var(--ink-2)}
+.cmp.before h3{color:var(--ink-2)}
+.cmp.after{background:var(--char);color:var(--ivory)}
+.cmp.after h3{color:var(--ivory)}
+.cmp.after .label{color:var(--greige)}
+.cmp h3{font-size:21px;font-weight:700;margin:8px 0 18px}
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:8px 4px}
+.chip{padding:5px 12px;font-size:13px;font-weight:500;border-radius:999px;border:1px solid var(--line);color:var(--ink-2)}
+.cmp.after .chip{border-color:#58524C;color:var(--ivory)}
+.cmp.after .chip.gold{background:var(--ivory);border-color:var(--ivory);color:var(--char);font-weight:700}
+.chain .to{font-size:12px;opacity:.5;padding:0 2px}
+.chain .end{font-size:13px;padding-left:10px;margin-left:4px;border-left:1px solid var(--line)}
+.cmp p{margin-top:18px;font-size:14px;line-height:1.85}
+.cmp.after p{color:#D8D0C5}
+.stack{display:flex;align-items:flex-end;gap:6px;height:56px;margin-top:22px}
+.stack span{flex:1;background:#5A544E;border-radius:2px 2px 0 0}
+.stack span:last-child{background:var(--terra)}
+
+/* ── 02 6つのピース ── */
+.pgrid{margin-top:52px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.pcard{display:flex;flex-direction:column;gap:18px;padding:26px 26px 24px;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.pc-head{display:flex;align-items:center;gap:14px}
+.pc-head svg{width:46px;height:46px;flex:none;overflow:visible}
+.pc-name{font-size:20px;font-weight:700;line-height:1.4;margin-top:2px}
+.tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.tags li{font-size:12.5px;font-weight:500;padding:3px 11px;border:1px solid var(--line);border-radius:999px;background:var(--ivory);color:var(--ink)}
+.pc-fill{margin-top:auto;padding-top:16px;border-top:1px solid var(--line)}
+.pc-fl{font-size:12px;font-weight:700;color:var(--ink-2);letter-spacing:.08em;margin-bottom:4px}
+.pc-fill p:last-child{font-size:14.5px;line-height:1.85}
+.pnote{margin-top:32px;display:flex;flex-wrap:wrap;gap:8px 24px;font-size:17px;font-weight:700}
+.pnote s{color:var(--label);font-weight:500;text-decoration-thickness:1px}
+
+/* ── 03 簡易診断 ── */
+.diag{margin-top:48px;display:grid;grid-template-columns:7fr 4fr;border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
+.diag-main{padding:clamp(26px,4vw,52px);min-height:460px;display:flex;flex-direction:column}
+.diag-side{padding:clamp(24px,3vw,36px);border-left:1px solid var(--line);background:var(--ivory)}
+.prog{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.prog .pname{font-size:13px;font-weight:500;color:var(--ink-2)}
+.pbar{height:3px;background:var(--line);border-radius:2px;margin:14px 0 40px;overflow:hidden}
+.pbar b{display:block;height:100%;background:var(--terra);transition:width .3s ease}
+.qtext{font-size:clamp(22px,2.4vw,30px);font-weight:700;line-height:1.55}
+.qhint{margin-top:12px;color:var(--ink-2);font-size:14.5px}
+.ans{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:auto;padding-top:40px}
+.ans button{min-height:72px;font-size:19px;font-weight:700;font-family:inherit;letter-spacing:.1em;border-radius:10px;border:1.5px solid var(--char);background:#fff;color:var(--ink);cursor:pointer;transition:background .15s,color .15s}
+.ans button:hover,.ans button:focus-visible{background:var(--char);color:var(--ivory)}
+.ans button:active{background:var(--terra);border-color:var(--terra);color:#fff}
+.back{margin-top:18px;align-self:flex-start;background:none;border:0;color:var(--ink-2);font-family:inherit;font-size:14px;cursor:pointer;padding:4px 0;text-decoration:underline;text-decoration-color:var(--greige);text-underline-offset:4px}
+.side-h{margin-bottom:10px}
+.slots{list-style:none;margin:0;padding:0}
+.slot{display:grid;grid-template-columns:30px 1fr auto;gap:12px;align-items:center;padding:11px 0 11px 10px;border-bottom:1px solid var(--line);border-left:2px solid transparent}
+.slot:last-child{border-bottom:0}
+.slot svg{width:26px;height:26px;overflow:visible}
+.slot .sn{font-size:14px;font-weight:500}
+.slot .st{font-size:11.5px;font-weight:700;padding:2px 10px;border-radius:999px;color:var(--label);border:1px solid var(--line)}
+.slot path{fill:none;stroke:var(--greige);stroke-width:10;stroke-dasharray:22 16}
+.slot.ok path{fill:var(--char);stroke:none}
+.slot.ok .st{background:var(--char);border-color:var(--char);color:var(--ivory)}
+.slot.ng path{fill:var(--terra);stroke:none}
+.slot.ng .sn{color:var(--terra-d);font-weight:700}
+.slot.ng .st{background:var(--terra);border-color:var(--terra);color:#fff}
+.slot.cur{border-left-color:var(--char)}
+.slot.cur .sn{font-weight:700}
+.res-h{font-size:clamp(22px,2.6vw,32px);font-weight:900;line-height:1.6}
+.res-h mark{background:none;color:var(--terra)}
+.fixes{margin:26px 0 0;padding:0;list-style:none;display:grid;gap:0;border-top:1px solid var(--line)}
+.fixes li{padding:14px 0;border-bottom:1px solid var(--line)}
+.fixes b{display:block;font-size:15px}
+.fixes span{font-size:13.5px;color:var(--ink-2)}
+.res-cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:auto;padding-top:34px}
+.line-card{margin-top:18px;display:grid;grid-template-columns:1fr auto;gap:18px 40px;align-items:center;padding:clamp(22px,3vw,30px) clamp(24px,4vw,44px);border-radius:12px;background:transparent;border:1px solid var(--line)}
+.lc-h{font-weight:700;font-size:clamp(18px,2vw,22px);line-height:1.5;margin-top:4px}
+.lc-t{margin-top:4px;color:var(--ink-2);font-size:14px}
 .line-add{display:flex;align-items:center}
 .line-add img{display:block;height:36px;width:auto}
-.line-card{margin-top:20px;display:grid;grid-template-columns:1fr auto;gap:20px 40px;align-items:center;padding:clamp(22px,3vw,32px) clamp(22px,4vw,44px);border-radius:6px;background:var(--surface);border:1px solid var(--line)}
-.line-card .mono{color:var(--brand-text)}
-.lc-h{font-family:"Noto Sans JP",sans-serif;font-weight:900;font-size:clamp(20px,2.2vw,26px);line-height:1.5;margin-top:6px}
-.lc-h em{font-style:normal;color:var(--brand-text)}
-.lc-t{margin-top:6px;color:var(--ink-2);font-size:14px}
-.contact-line{margin-top:32px;padding-top:24px;border-top:1px solid var(--band-line);display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px}
-.contact-line p{font-size:14px;opacity:.8}
 
-/* hero */
-.hero{padding:clamp(56px,8vw,112px) 0 clamp(48px,7vw,88px)}
-.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(32px,5vw,72px);align-items:end}
-.eyebrow{color:var(--accent-text);margin-bottom:22px;display:flex;gap:12px;align-items:center}
-.eyebrow::before{content:"";width:28px;height:2px;background:var(--accent)}
-.hero h1{font-size:clamp(36px,5.6vw,72px);line-height:1.26}
-.hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--leaf-soft) 62%)}
-.lead{font-size:clamp(16px,1.5vw,18px);color:var(--ink-2);max-width:30em}
-.lead strong{color:var(--ink);font-weight:700}
-.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-
-/* puzzle */
-.puzzle{width:100%;height:auto;overflow:visible;display:block}
-.puzzle .p-a{fill:var(--piece)} .puzzle .p-b{fill:var(--piece-2)}
-.puzzle .seam{stroke:var(--surface);stroke-width:3;stroke-linejoin:round}
-.puzzle .lbl{fill:var(--piece-ink);font-family:"Zen Kaku Gothic New",sans-serif;font-weight:700;font-size:19px;text-anchor:middle;dominant-baseline:central;letter-spacing:.06em}
-.puzzle .plate{fill:var(--plate)}
-
-/* sections */
-section.sec{padding:clamp(72px,10vw,128px) 0}
-.sec-label{display:flex;align-items:center;gap:14px;color:var(--ink-2);margin-bottom:20px}
-.sec-label b{color:var(--accent-text);font-weight:500}
-.sec h2{font-size:clamp(28px,3.6vw,44px);line-height:1.4}
-.sec .sub{margin-top:18px;color:var(--ink-2);max-width:36em}
-
-/* assembly */
-.assembly{position:relative;height:240vh;background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.stage{position:sticky;top:64px;height:calc(100vh - 64px);display:flex;align-items:center;overflow:hidden}
-.stage .wrap{width:100%;display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,5vw,72px);align-items:center}
-.steps{position:relative;min-height:13em}
-.step{position:absolute;inset:0 0 auto 0;opacity:0;transform:translateY(12px);transition:opacity .4s ease,transform .4s ease}
-.step.on{opacity:1;transform:none}
-.step h3{font-size:clamp(24px,2.8vw,34px);line-height:1.45}
-.step p{margin-top:16px;color:var(--ink-2)}
-.ticks{display:flex;gap:6px;margin-top:28px}
-.ticks i{flex:1;height:3px;background:var(--line);position:relative;overflow:hidden}
-.ticks i b{position:absolute;inset:0;background:var(--accent);transform-origin:left;transform:scaleX(0)}
-.stage-fig{max-width:580px;justify-self:center;width:100%}
-
-/* 01 flow */
-.s02 .wrap{display:grid;grid-template-columns:6fr 6fr;gap:clamp(40px,6vw,88px)}
-.flow{list-style:none;margin:36px 0 0;padding:0}
-.flow li{position:relative;display:grid;grid-template-columns:44px 1fr;gap:18px;align-items:center;padding:0 0 26px}
-.flow li::after{content:"";position:absolute;left:21px;top:44px;bottom:0;width:2px;background:var(--line)}
-.flow li:last-child::after{display:none}
-.flow .n{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--ink);font-family:"IBM Plex Mono",monospace;font-size:13px;background:var(--ground);position:relative;z-index:1}
-.flow .t{font-weight:700;font-size:18px}
-.flow .t small{display:block;font-weight:400;font-size:14px;color:var(--ink-2)}
-.flow li.hl .n{background:var(--piece);border-color:var(--piece);color:var(--piece-ink)}
-.flow li.goal .n{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.loopnote{margin-left:62px;display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border:1.5px dashed var(--accent);border-radius:3px;color:var(--accent-text);font-weight:700;font-size:14px}
-.compare{display:grid;gap:20px;align-content:start;margin-top:8px}
-.cmp{padding:28px;border:1px solid var(--line);border-radius:4px;background:var(--surface)}
-.cmp.after{background:var(--piece);border-color:var(--piece);color:var(--piece-ink)}
-.cmp h3{font-size:22px;margin:8px 0 18px}
-.cmp .mono{opacity:.75}
-.chain{display:flex;flex-wrap:wrap;align-items:center;gap:6px 4px}
-.chip{padding:6px 12px;font-size:14px;font-weight:700;border-radius:3px;background:var(--ground);border:1px solid var(--line);color:var(--ink)}
-.cmp.after .chip{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25);color:var(--piece-ink)}
-.cmp.after .chip.gold{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.chain .to{font-family:"IBM Plex Mono",monospace;font-size:13px;opacity:.55;padding:0 2px}
-.chain .end{font-size:13px;color:var(--ink-2);padding-left:6px;border-left:2px solid var(--line);margin-left:6px}
-.cmp p{margin-top:16px;font-size:14px;opacity:.85}
-.stack{display:flex;align-items:flex-end;gap:6px;height:64px;margin-top:18px}
-.stack span{flex:1;background:var(--accent);opacity:.9;border-radius:2px 2px 0 0}
-
-/* 02 pieces list */
-.plist{margin-top:48px;border-top:1.5px solid var(--ink)}
-.prow{display:grid;grid-template-columns:64px minmax(0,1.05fr) minmax(0,1.2fr) minmax(0,1.3fr);gap:24px;align-items:center;padding:26px 0;border-bottom:1px solid var(--line)}
-.prow svg{width:52px;height:52px;overflow:visible}
-.prow .nm{font-size:22px;font-weight:900;line-height:1.4}
-.prow .nm small{display:block;font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:500;letter-spacing:.14em;color:var(--ink-2)}
-.prow .items{display:flex;flex-wrap:wrap;gap:6px}
-.prow .items span{font-size:13px;font-weight:700;padding:4px 10px;border:1px solid var(--line);border-radius:3px;background:var(--surface)}
-.prow .fills{font-weight:500}
-.prow .fills::before{content:"埋まるもの";display:block;font-family:"IBM Plex Mono","Zen Kaku Gothic New",monospace;font-size:11px;letter-spacing:.12em;color:var(--accent-text)}
-.pnote{margin-top:28px;display:flex;flex-wrap:wrap;gap:8px 28px;font-size:18px;font-weight:700}
-.pnote s{color:var(--ink-2);font-weight:500;text-decoration-thickness:1.5px}
-.fine{margin-top:14px;font-size:12px;line-height:1.7;color:var(--ink-2);max-width:60em}
-
-/* 03 diagnosis */
-.diag{margin-top:48px;display:grid;grid-template-columns:7fr 5fr;border:1px solid var(--line);border-radius:6px;background:var(--surface);overflow:hidden}
-.diag-main{padding:clamp(24px,4vw,48px);min-height:440px;display:flex;flex-direction:column}
-.diag-side{padding:clamp(24px,3vw,36px);background:var(--ground);border-left:1px solid var(--line)}
-.prog{display:flex;justify-content:space-between;align-items:center;color:var(--ink-2)}
-.pbar{height:3px;background:var(--line);margin:14px 0 36px}
-.pbar b{display:block;height:100%;background:var(--accent);transition:width .3s ease}
-.qtext{font-size:clamp(22px,2.4vw,30px);font-weight:900;line-height:1.55}
-.qhint{margin-top:10px;color:var(--ink-2);font-size:14px}
-.ans{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:auto;padding-top:36px}
-.ans button{padding:20px;font-size:18px;font-weight:700;font-family:inherit;border-radius:4px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;transition:background .15s,color .15s}
-.ans button:hover{background:var(--ink);color:var(--ground)}
-.back{margin-top:16px;align-self:flex-start;background:none;border:0;color:var(--ink-2);font-family:inherit;font-size:14px;cursor:pointer;padding:4px 0;text-decoration:underline;text-underline-offset:3px}
-.side-h{color:var(--ink-2);margin-bottom:16px}
-.slots{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.slot{display:grid;grid-template-columns:40px 1fr auto;gap:14px;align-items:center;padding:10px 12px;border-radius:4px;background:var(--surface);border:1px solid var(--line)}
-.slot svg{width:34px;height:34px;overflow:visible}
-.slot .sn{font-weight:700}
-.slot .st{font-size:12px;font-weight:700;padding:3px 8px;border-radius:2px;color:var(--ink-2);border:1px solid var(--line)}
-.slot path{fill:none;stroke:var(--hole);stroke-width:10;stroke-dasharray:22 16}
-.slot.ok path{fill:var(--piece);stroke:none}
-.slot.ok .st{background:var(--piece);border-color:var(--piece);color:var(--piece-ink)}
-.slot.ng{border-color:var(--accent)}
-.slot.ng path{fill:var(--accent-soft);stroke:var(--accent)}
-.slot.ng .st{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.slot.cur{box-shadow:0 0 0 2px var(--ink) inset}
-.res-h{font-size:clamp(22px,2.6vw,32px);font-weight:900;line-height:1.55}
-.res-h mark{background:var(--accent);color:var(--accent-ink);padding:0 .25em;border-radius:2px}
-.fixes{margin:24px 0 0;padding:0;list-style:none;display:grid;gap:10px}
-.fixes li{padding:14px 16px;border-left:3px solid var(--accent);background:var(--ground)}
-.fixes b{display:block}
-.fixes span{font-size:14px;color:var(--ink-2)}
-.res-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:auto;padding-top:32px}
-
-/* contact */
-.contact{background:var(--band);color:var(--band-ink);padding:clamp(72px,10vw,120px) 0}
-.contact .wrap{display:grid;grid-template-columns:5fr 6fr;gap:clamp(32px,6vw,80px);align-items:start}
-.contact h2{font-size:clamp(28px,3.6vw,44px);line-height:1.4}
-.contact .sub{margin-top:18px;opacity:.75}
-.contact .mono{color:var(--accent)}
-form{display:grid;gap:16px}
-label{display:grid;gap:6px;font-size:14px;font-weight:700}
-input,select,textarea{font:inherit;font-size:16px;padding:12px 14px;border-radius:3px;border:1px solid var(--band-line);background:rgba(255,255,255,.04);color:var(--band-ink)}
-select option{color:#0E1C2E}
-textarea{min-height:110px;resize:vertical}
+/* ── お問い合わせ ── */
+.contact{background:var(--band);color:var(--band-ink);padding:clamp(80px,11vw,128px) 0}
+.contact .wrap{display:grid;grid-template-columns:5fr 6fr;gap:clamp(36px,7vw,96px);align-items:start}
+.contact .label{color:var(--greige)}
+.contact h2{margin-top:18px;font-size:clamp(28px,3.4vw,42px);font-weight:700;line-height:1.45;color:var(--band-ink)}
+.contact h2 em{color:var(--terra-l)}
+.contact .sub{color:#CFC6BA}
+.contact-line{margin-top:40px;padding-top:26px;border-top:1px solid var(--band-line);display:grid;gap:14px}
+.contact-line p{font-size:14px;color:#CFC6BA}
+form{display:grid;gap:18px;padding:clamp(24px,3vw,36px);background:var(--band-2);border:1px solid var(--band-line);border-radius:12px}
+label{display:grid;gap:7px;font-size:13.5px;font-weight:500;color:#E7DFD4}
+input,select,textarea{font:inherit;font-size:16px;padding:13px 15px;border-radius:8px;border:1px solid transparent;background:var(--ivory);color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--terra-l);outline-offset:1px}
+textarea{min-height:112px;resize:vertical}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.sent{padding:14px 16px;border:1.5px dashed var(--accent);border-radius:3px;font-size:14px}
-footer{background:var(--band);color:var(--band-ink);border-top:1px solid var(--band-line);padding:28px 0;font-size:13px}
-footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;opacity:.7}
+form .btn-primary{margin-top:6px;box-shadow:none}
+.sent{padding:14px 16px;border:1px dashed var(--greige);border-radius:8px;font-size:14px;color:#E7DFD4}
+footer{background:var(--band);color:var(--greige);border-top:1px solid var(--band-line);padding:26px 0;font-size:12.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
+@media (max-width:980px){
+  .pgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
 @media (max-width:880px){
   .hero .wrap,.s02 .wrap,.contact .wrap,.diag{grid-template-columns:1fr}
-  .stage .wrap{grid-template-columns:1fr;gap:8px}
-  .stage-fig{order:-1;max-width:400px}
-  .steps{min-height:11em}
-  .prow{grid-template-columns:52px 1fr;gap:10px 16px}
-  .prow .items,.prow .fills{grid-column:2}
+  .assembly{height:170vh}
+  .stage .wrap{grid-template-columns:1fr;gap:4px}
+  .stage-fig{order:-1;max-width:380px}
+  .steps{min-height:10.5em}
+  .compare{margin-top:8px}
   .diag-side{border-left:0;border-top:1px solid var(--line)}
   .two{grid-template-columns:1fr}
   .line-card{grid-template-columns:1fr}
 }
-@media (max-width:520px){
-  .top .hdr-diag{display:none}
-  .hero .cta .btn{flex:1 1 100%}
+@media (max-width:560px){
+  .pgrid{grid-template-columns:1fr}
+  .top .btn-sm{padding:0 12px;font-size:12px}
+  .brand img{height:34px}
+  .cta .btn{flex:1 1 100%}
+  .loopnote,.s02 .fine{margin-left:0}
+  .res-cta .btn{flex:1 1 100%}
 }
 </style>
 </head>
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#top"><img src="assets/lmp-logo.png" alt="LIFE MAKE PARTNER'S" width="62" height="38"></a>
+    <a class="brand" href="#top"><img src="assets/lmp-logo.png" alt="LIFE MAKE PARTNER'S" width="65" height="40"></a>
     <div class="hdr">
-      <a class="btn btn-ghost btn-sm hdr-diag" href="#diagnosis">6問で診断</a>
-      <a class="btn btn-line btn-sm" href="https://lin.ee/ZbhfV7X"><svg class="ico" data-line-ico aria-hidden="true"></svg>LINEで診断</a>
+      <a class="btn btn-primary btn-sm" href="#diagnosis">6問で診断</a>
+      <a class="btn btn-line btn-sm" href="https://lin.ee/ZbhfV7X"><svg class="ico" data-line-ico aria-hidden="true"></svg>LINE</a>
     </div>
   </div>
 </header>
@@ -240,16 +254,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
   <section class="hero">
     <div class="wrap">
       <div>
-        <p class="eyebrow mono">Life Make Partners</p>
-        <h1 class="disp">あなたの会社に、<br><em>足りないピース</em>は<br>何ですか？</h1>
+        <p class="eyebrow label">Life Make Partners</p>
+        <h1>あなたの会社に、<br><em>足りないピース</em>は<br>何ですか？</h1>
       </div>
       <div>
         <p class="lead">来月の相談を、どうつくるか。任せられる営業を、どう育てるか。契約の後も、どう関係を続けるか。<br><strong>答えが出ないのは、努力が足りないからではなく、「勝つためのピース」がまだ揃っていないだけ</strong>かもしれません。</p>
         <div class="cta">
           <a class="btn btn-primary" href="#diagnosis">6問で診断する <span class="arrow">→</span></a>
-          <a class="btn btn-line" href="https://lin.ee/ZbhfV7X"><svg class="ico" data-line-ico aria-hidden="true"></svg>LINEで詳しく診断</a>
+          <a class="btn btn-ghost" href="#model">先に完成形を見る</a>
         </div>
-        <a class="textlink" href="#model">先に完成形を見る ↓</a>
+        <p class="subcta">LINEでも診断できます
+          <a class="btn btn-line btn-sm" href="https://lin.ee/ZbhfV7X"><svg class="ico" data-line-ico aria-hidden="true"></svg>LINEで詳しく診断</a>
+        </p>
       </div>
     </div>
   </section>
@@ -258,14 +274,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     <div class="stage">
       <div class="wrap">
         <div>
-          <p class="sec-label mono"><b>—</b> ピースが揃うと</p>
+          <p class="sec-label" id="stageLabel">ピースが揃う前</p>
           <div class="steps" id="steps">
             <div class="step on">
-              <h3 class="disp">ピースは、<br>まだ<em>バラバラ</em>。</h3>
+              <h3>ピースは、<br>まだバラバラ。</h3>
               <p id="scatterText"></p>
             </div>
             <div class="step">
-              <h3 class="disp"><em>ひとつの塊</em>に、<br>なる。</h3>
+              <h3><em>ひとつの塊</em>に、<br>なる。</h3>
               <p>6つのピースが噛み合ったとき、御社は「相談が集まる、地域の人生支援窓口」になる。それが LIFE MAKE PARTNERS です。</p>
             </div>
           </div>
@@ -281,8 +297,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
   <section class="sec s02" id="model">
     <div class="wrap">
       <div>
-        <p class="sec-label mono"><b>01</b> 完成図</p>
-        <h2 class="disp">企業との出会いから、<br><em>社員と家族の相談</em>まで。</h2>
+        <p class="sec-label"><b>01</b>完成図</p>
+        <h2>企業との出会いから、<br><em>社員と家族の相談</em>まで。</h2>
         <ol class="flow">
           <li class="hl"><span class="n">01</span><span class="t">企業との接点<small>名刺交換や、既存の法人取引から</small></span></li>
           <li><span class="n">02</span><span class="t">PRESIDENT JOURNEY<small>社長が、社員を支える方針を自分の言葉にする</small></span></li>
@@ -292,12 +308,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
           <li class="goal"><span class="n">06</span><span class="t">面談・提案・比較<small>納得できる意思決定を支える</small></span></li>
           <li><span class="n">07</span><span class="t">継続する関係<small>暮らしが変わるたび、次の相談へ</small></span></li>
         </ol>
-        <span class="loopnote"><span class="arrow">↻</span> 07から05へ。契約の後も、暮らしの相談先として</span>
+        <span class="loopnote"><span class="arrow">↻</span>07から05へ。契約の後も、暮らしの相談先として</span>
         <p class="fine">担当・進捗・次の行動・期限は、REALIZE OSMA でつなぎます。</p>
       </div>
       <div class="compare">
-        <div class="cmp">
-          <p class="mono">Before</p>
+        <div class="cmp before">
+          <p class="label">Before</p>
           <h3>物件検索から始まる営業</h3>
           <div class="chain">
             <span class="chip">物件検索</span><span class="to">→</span><span class="chip">価格・立地</span><span class="to">→</span><span class="chip">取引</span><span class="end">関係もここで終わり</span>
@@ -305,10 +321,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
           <p>住まい探しを始めたときに出会い、最初の会話は価格・立地・物件条件。取引が終われば、次に話す理由がない。</p>
         </div>
         <div class="cmp after">
-          <p class="mono">After</p>
+          <p class="label">After</p>
           <h3>社員支援から始まる営業</h3>
           <div class="chain">
-            <span class="chip">日々の悩み</span><span class="to">→</span><span class="chip">学び</span><span class="to">→</span><span class="chip">相談</span><span class="to">→</span><span class="chip gold">契約</span><span class="to">→</span><span class="chip">節目の相談</span><span class="to">→</span><span class="chip gold">契約</span><span class="to">→</span><span class="chip">…</span>
+            <span class="chip">日々の悩み</span><span class="to">→</span><span class="chip">学び</span><span class="to">→</span><span class="chip">相談</span><span class="to">→</span><span class="chip gold">契約</span><span class="to">→</span><span class="chip">節目の相談</span><span class="to">→</span><span class="chip gold">契約</span>
           </div>
           <div class="stack" aria-hidden="true"><span style="height:18%"></span><span style="height:34%"></span><span style="height:52%"></span><span style="height:70%"></span><span style="height:100%"></span></div>
           <p>「どの物件？」より前の、「どう暮らしたい？」から。結婚、出産、親の介護。暮らしが変わるたびに、次の相談が生まれる。</p>
@@ -317,11 +333,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     </div>
   </section>
 
-  <section class="sec s03" id="pieces" style="padding-top:0">
+  <section class="sec s03" id="pieces">
     <div class="wrap">
-      <p class="sec-label mono"><b>02</b> LMPが提供するピース</p>
-      <h2 class="disp">機能を足すのではなく、<br><em>6つのピース</em>を埋める。</h2>
-      <div class="plist" id="plist"></div>
+      <p class="sec-label"><b>02</b>LMPが提供するピース</p>
+      <h2>機能を足すのではなく、<br><em>6つのピース</em>を埋める。</h2>
+      <div class="pgrid" id="plist"></div>
       <p class="pnote"><s>「こんな機能があります」</s><span>→ 「このピースが埋まります」</span></p>
       <p class="fine">※収益は、標準プランをLMPが直接開拓した場合の企画条件（2026年9月時点）による費用控除前の収入例です。相談収益は商品・取引条件で変動し、契約・継続・成果を保証するものではありません。提供機能・連携範囲は構想を含み、導入時に確認します。</p>
     </div>
@@ -329,25 +345,25 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 
   <section class="sec s04" id="diagnosis" style="padding-top:0">
     <div class="wrap">
-      <p class="sec-label mono"><b>03</b> 簡易診断</p>
-      <h2 class="disp">あなたの会社に<br><em>足りないピース</em>は？</h2>
+      <p class="sec-label"><b>03</b>簡易診断</p>
+      <h2>あなたの会社に<br><em>足りないピース</em>は？</h2>
       <p class="sub">6つのピースに1問ずつ、「はい／いいえ」で答えるだけ。約1分で、埋めるべきピースがわかります。</p>
       <div class="diag">
         <div class="diag-main" id="diagMain" aria-live="polite"></div>
         <aside class="diag-side">
-          <p class="side-h mono">Your puzzle</p>
+          <p class="side-h label">Your puzzle</p>
           <ul class="slots" id="slots"></ul>
         </aside>
       </div>
       <div class="line-card">
         <div>
-          <p class="mono">LINE診断</p>
-          <p class="lc-h">もっと詳しく知りたい方は、<em>LINE診断</em>へ。</p>
+          <p class="label">LINE</p>
+          <p class="lc-h">もっと詳しく知りたい方は、LINE診断へ。</p>
           <p class="lc-t">LINE公式アカウントを友だち追加すると、LINEで診断を受けられます。</p>
         </div>
         <div class="line-add">
           <a href="https://lin.ee/ZbhfV7X"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a>
-          <a class="btn btn-line" href="https://lin.ee/ZbhfV7X" hidden><svg class="ico" data-line-ico aria-hidden="true"></svg>友だち追加してLINE診断</a>
+          <a class="btn btn-line btn-sm" href="https://lin.ee/ZbhfV7X" hidden><svg class="ico" data-line-ico aria-hidden="true"></svg>友だち追加してLINE診断</a>
         </div>
       </div>
     </div>
@@ -356,14 +372,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
   <section class="contact" id="contact">
     <div class="wrap">
       <div>
-        <p class="mono">Contact</p>
-        <h2 class="disp" style="margin-top:16px">地域の人生支援を、<br><em>御社の次の事業</em>に。</h2>
+        <p class="label">Contact</p>
+        <h2>地域の人生支援を、<br><em>御社の次の事業</em>に。</h2>
         <p class="sub">LMP加盟・導入相談、または診断結果をもとにした個別相談を承ります。御社の商圏、人員、既存事業から、無理のない始め方と収益計画を一緒に考えます。</p>
         <div class="contact-line">
           <p>フォームより手軽に、LINEで診断・相談したい方はこちら</p>
           <div class="line-add">
             <a href="https://lin.ee/ZbhfV7X"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a>
-            <a class="btn btn-line" href="https://lin.ee/ZbhfV7X" hidden><svg class="ico" data-line-ico aria-hidden="true"></svg>友だち追加してLINE診断</a>
+            <a class="btn btn-line btn-sm" href="https://lin.ee/ZbhfV7X" hidden><svg class="ico" data-line-ico aria-hidden="true"></svg>友だち追加してLINE診断</a>
           </div>
         </div>
       </div>
@@ -380,7 +396,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
         </div>
         <label>メールアドレス<input type="email" name="email" autocomplete="email" required></label>
         <label>ご相談内容・診断結果<textarea name="note" id="note" placeholder="例：法人との接点づくりについて相談したい"></textarea></label>
-        <button class="btn btn-primary" type="submit">この内容で予約を申し込む <span class="arrow">→</span></button>
+        <button class="btn btn-primary" type="submit">この内容で相談を申し込む <span class="arrow">→</span></button>
         <p class="sent" id="sent" hidden>送信先のフォーム連携はまだ設定されていません（デザイン案）。公開時に予約フォームやメール送信とつなぎます。</p>
       </form>
     </div>
@@ -398,6 +414,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     return n;
   };
   const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const ease = t => t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2;
 
   // LINEボタンの吹き出しアイコン
   const LINE_PATH = "M12 3C6.48 3 2 6.63 2 11.1c0 4 3.55 7.36 8.35 8 .32.07.77.21.88.5.1.26.07.66.03.92l-.14.85c-.04.26-.2 1 .88.55 1.08-.46 5.82-3.43 7.94-5.87C21.4 14.44 22 12.84 22 11.1 22 6.63 17.52 3 12 3z";
@@ -412,23 +429,24 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     const swap = () => { official.hidden = true; fallback.hidden = false; };
     if (img.complete && img.naturalWidth === 0) swap(); else img.addEventListener("error", swap);
   });
-  const ease = t => t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2;
 
   // ── 6ピース（ここが唯一の基準。パズル・提供ピース・診断はすべてこの配列から作る）──
+  // tone：チャコール×2 / グレージュ×2 / アイボリー寄り×1 / テラコッタ×1（入口となる法人開拓）
   const PIECES = [
-    { key: "sales",   short: "営業",     en: "Sales",      items: ["営業マニュアル", "Eラーニング", "AIロープレ", "アオ先生"], fills: "学ぶ・練習する・現場で相談する。相談に応える営業を、仕組みで育てる。",
+    { key: "sales",   short: "営業",     en: "Sales",      tone: "char",     items: ["営業マニュアル", "Eラーニング", "AIロープレ", "アオ先生"], fills: "学ぶ・練習する・現場で相談する。相談に応える営業を、仕組みで育てる。",
       q: "営業担当によって、成果に差がありますか？", hint: "任せられる営業を、仕組みで育てられているか。", good: false },
-    { key: "corp",    short: "法人開拓", en: "Corporate",  items: ["PRESIDENT JOURNEY", "PRESIDENT Record", "REALIZE CLUB"], fills: "名刺交換の次に、社長へ案内できるものがある。社長の想いが、導入相談の出発点になる。",
+    { key: "corp",    short: "法人開拓", en: "Corporate",  tone: "terra",    items: ["PRESIDENT JOURNEY", "PRESIDENT Record", "REALIZE CLUB"], fills: "名刺交換の次に、社長へ案内できるものがある。社長の想いが、導入相談の出発点になる。",
       q: "経営者と、商談以外で継続して会える理由がありますか？", hint: "名刺交換の次に、社長へ案内できるものがあるか。", good: true },
-    { key: "nurture", short: "顧客育成", en: "Nurture",    items: ["LIFE JOURNEY", "ミオ先生", "LIFE Record"], fills: "物件を探し始める前から、社員と家族の暮らしの相談先になる。",
+    { key: "nurture", short: "顧客育成", en: "Nurture",    tone: "greige",   items: ["LIFE JOURNEY", "ミオ先生", "LIFE Record"], fills: "物件を探し始める前から、社員と家族の暮らしの相談先になる。",
       q: "物件を探し始める前のお客様と、接点がありますか？", hint: "「どの物件？」より前の、「どう暮らしたい？」から関われているか。", good: true },
-    { key: "deal",    short: "商談",     en: "Deal",       items: ["LIFE Consult", "住宅・保険相談導線"], fills: "本人が希望した相談を、面談・比較・意思決定までつなぐ。",
+    { key: "deal",    short: "商談",     en: "Deal",       tone: "greige-d", items: ["LIFE Consult", "住宅・保険相談導線"], fills: "本人が希望した相談を、面談・比較・意思決定までつなぐ。",
       q: "社員や家族の相談を、面談・提案につなげる流れがありますか？", hint: "相談の背景を引き継ぎ、毎回ゼロから聞き直さずに済んでいるか。", good: true },
-    { key: "ma",      short: "管理",     en: "Management", items: ["REALIZE OSMA"], fills: "相談・案件・担当・次の行動を一元管理。対応漏れを防ぎ、成約後も次の支援へ。",
+    { key: "ma",      short: "管理",     en: "Management", tone: "char",     items: ["REALIZE OSMA"], fills: "相談・案件・担当・次の行動を一元管理。対応漏れを防ぎ、成約後も次の支援へ。",
       q: "相談や案件の担当・次の行動・期限を、チームで管理できていますか？", hint: "未対応の相談や、止まった商談をそのままにしていないか。", good: true },
-    { key: "revenue", short: "収益",     en: "Revenue",    items: ["REALIZE CLUB 月会費", "相談導線"], fills: "RC入会で30万円／社、継続中は月1.5万円／社。そこに住まい・保険の相談収益が重なる。",
+    { key: "revenue", short: "収益",     en: "Revenue",    tone: "ivory",    items: ["REALIZE CLUB 月会費", "相談導線"], fills: "RC入会で30万円／社、継続中は月1.5万円／社。そこに住まい・保険の相談収益が重なる。",
       q: "成約がない月も、積み上がっていく収益がありますか？", hint: "入会・継続・相談の3つで、収益の柱をつくれているか。", good: true }
   ];
+  const LIGHT_LABEL = { char: true, terra: true, "greige-d": true };
   PIECES.forEach(p => p.nm = p.short + "のピース");
 
   // jigsaw edge: s = 1 tab outward, -1 socket, 0 flat
@@ -458,13 +476,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     p.sides = sides(p.r, p.c);
     p.d = piecePath(p.x, p.y, L, p.sides);
     p.icon = piecePath(0, 0, L, p.sides);
-    p.cls = (p.r + p.c) % 2 ? "p-b" : "p-a";
   });
 
   document.getElementById("scatterText").textContent =
     PIECES.map(p => p.short).join("、") + "。一つでも欠けると、生まれた相談が事業になりません。";
 
-  // ── 組み上がり演出：バラバラ → 1つの塊 → LIFE MAKE PARTNERS ──
+  // ── 組み上がり演出：バラバラ → 継ぎ目のない1つの塊 → ロゴ ──
   const stage = document.getElementById("stagePuzzle");
   const SCATTER = [
     { dx: -45, dy: -60, rot: -14 }, { dx: 0, dy: -95, rot: 9 },  { dx: 45, dy: -55, rot: 16 },
@@ -473,14 +490,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
   const layer = el("g", {}, stage);
   PIECES.forEach(p => {
     p.g = el("g", {}, layer);
-    p.seam = el("path", { d: p.d, class: p.cls + " seam" }, p.g);
-    p.label = el("text", { x: p.x + L/2, y: p.y + L/2, class: "lbl" }, p.g);
-    p.label.textContent = p.short;
+    el("path", { d: p.d, class: `tn-${p.tone} seam` }, p.g);
+    const t = el("text", { x: p.x + L/2, y: p.y + L/2, class: "lbl " + (LIGHT_LABEL[p.tone] ? "lb-light" : "lb-dark") }, p.g);
+    t.textContent = p.short;
   });
   // 揃ったら6枚を消し、継ぎ目のない1枚の塊に置き換える（外周は平らなので矩形と一致）
-  const solid = el("rect", { x: 0, y: 0, width: COLS * L, height: ROWS * L, class: "p-a", opacity: 0 }, stage);
+  const solid = el("rect", { x: 0, y: 0, width: COLS * L, height: ROWS * L, class: "tn-char", opacity: 0 }, stage);
   const plate = el("rect", { x: 0, y: 0, width: COLS * L, height: ROWS * L, class: "plate", opacity: 0 }, stage);
-  // 仕上げ：緑の塊が白い板に変わり、ロゴが浮かび上がる（ロゴ比 1338:821）
   const mark = el("g", { opacity: 0 }, stage);
   const LW = 400, LH = LW * 821 / 1338;
   const logo = el("image", { href: "assets/lmp-logo.png", x: 240 - LW/2, y: 160 - LH/2, width: LW, height: LH }, mark);
@@ -488,6 +504,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 
   const asm = document.getElementById("assembly");
   const stepEls = [...document.querySelectorAll("#steps .step")];
+  const stageLabel = document.getElementById("stageLabel");
   const tickG = document.getElementById("tickGather"), tickM = document.getElementById("tickMerge");
   let lastStep = -1, ticking = false;
 
@@ -496,11 +513,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     const rect = asm.getBoundingClientRect();
     const total = asm.offsetHeight - (window.innerHeight - 64);
     const p = clamp((64 - rect.top) / Math.max(total, 1));
-    const m = ease(clamp((p - .58) / .16));   // 継ぎ目が消えて1つの塊に
-    const w = ease(clamp((p - .76) / .16));   // 白い板＋ロゴへ
+    const m = ease(clamp((p - .56) / .16));   // 継ぎ目が消えて1つの塊に
+    const w = ease(clamp((p - .74) / .16));   // アイボリーの板＋ロゴへ
     let gatherSum = 0;
     PIECES.forEach((pc, i) => {
-      const g = ease(clamp((p - .04 - i * .03) / .34));   // 最後のピースも p=.53 で着地
+      const g = ease(clamp((p - .02 - i * .03) / .34));   // 最後のピースも p=.51 で着地
       gatherSum += g;
       const s = SCATTER[i], k = 1 - g;
       const cx = pc.x + L/2, cy = pc.y + L/2;
@@ -512,29 +529,36 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     plate.setAttribute("opacity", w.toFixed(3));
     layer.style.visibility = m >= 1 ? "hidden" : "visible";
     mark.setAttribute("opacity", w.toFixed(3));
-    mark.setAttribute("transform", `translate(240 160) scale(${(.9 + .1 * w).toFixed(3)}) translate(-240 -160)`);
+    mark.setAttribute("transform", `translate(240 160) scale(${(.92 + .08 * w).toFixed(3)}) translate(-240 -160)`);
     tickG.style.transform = `scaleX(${(gatherSum / PIECES.length).toFixed(3)})`;
     tickM.style.transform = `scaleX(${m.toFixed(3)})`;
     const step = m > .5 ? 1 : 0;
-    if (step !== lastStep) { stepEls.forEach((e, i) => e.classList.toggle("on", i === step)); lastStep = step; }
+    if (step !== lastStep) {
+      stepEls.forEach((e, i) => e.classList.toggle("on", i === step));
+      stageLabel.textContent = step ? "ピースが揃うと" : "ピースが揃う前";
+      lastStep = step;
+    }
   }
   const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
   addEventListener("scroll", onScroll, { passive: true });
   addEventListener("resize", onScroll);
   update();
 
-  // ── 02 提供するピース ──
+  // ── 02 提供するピース（カード）──
   const pl = document.getElementById("plist");
   PIECES.forEach(p => {
-    const row = document.createElement("div");
-    row.className = "prow";
-    const svg = el("svg", { viewBox: "-40 -40 240 240", "aria-hidden": "true" }, row);
-    el("path", { d: p.icon, fill: `var(--${p.cls === "p-b" ? "piece-2" : "piece"})` }, svg);
-    row.insertAdjacentHTML("beforeend",
-      `<div class="nm"><small>${p.en}</small>${p.nm}</div>
-       <div class="items">${p.items.map(t => `<span>${t}</span>`).join("")}</div>
-       <div class="fills">${p.fills}</div>`);
-    pl.appendChild(row);
+    const card = document.createElement("article");
+    card.className = "pcard";
+    const head = document.createElement("div");
+    head.className = "pc-head";
+    const svg = el("svg", { viewBox: "-40 -40 240 240", "aria-hidden": "true" }, head);
+    el("path", { d: p.icon, class: `tn-${p.tone}` }, svg);
+    head.insertAdjacentHTML("beforeend", `<div><p class="label">${p.en}</p><h3 class="pc-name">${p.nm}</h3></div>`);
+    card.appendChild(head);
+    card.insertAdjacentHTML("beforeend",
+      `<ul class="tags">${p.items.map(t => `<li>${t}</li>`).join("")}</ul>
+       <div class="pc-fill"><p class="pc-fl">埋まること</p><p>${p.fills}</p></div>`);
+    pl.appendChild(card);
   });
 
   // ── 03 簡易診断（6ピース × 1問ずつ）──
@@ -567,7 +591,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     if (cur < N) {
       const p = PIECES[cur];
       main.innerHTML = `
-        <div class="prog mono"><span>Question ${cur + 1} / ${N}</span><span>${p.nm}</span></div>
+        <div class="prog"><span class="label">Question ${cur + 1} / ${N}</span><span class="pname">${p.nm}</span></div>
         <div class="pbar"><b style="width:${cur / N * 100}%"></b></div>
         <p class="qtext">${p.q}</p>
         <p class="qhint">${p.hint}</p>
@@ -585,14 +609,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       body = `<ul class="fixes">${miss.map(p => `<li><b>${p.nm}</b><span>${p.items.join(" / ")}｜${p.fills}</span></li>`).join("")}</ul>`;
     }
     main.innerHTML = `
-      <div class="prog mono"><span>Result</span><span>${N - miss.length} / ${N} pieces</span></div>
+      <div class="prog"><span class="label">Result</span><span class="pname">${N - miss.length} / ${N} ピースが揃っています</span></div>
       <div class="pbar"><b style="width:100%"></b></div>
       <p class="res-h">${head}</p>
       ${body}
       <div class="res-cta">
-        <a class="btn btn-ghost" href="#model">完成形を見てみる</a>
-        <a class="btn btn-primary" href="#contact" data-book>この結果で個別相談を予約 <span class="arrow">→</span></a>
-        <a class="btn btn-line" href="https://lin.ee/ZbhfV7X">${LINE_ICO}LINEで詳しく診断</a>
+        <a class="btn btn-primary" href="#contact" data-book>この結果で個別相談する <span class="arrow">→</span></a>
+        <a class="btn btn-line btn-sm" href="https://lin.ee/ZbhfV7X">${LINE_ICO}LINEで詳しく診断</a>
+        <a class="textlink" href="#model">完成形を見る</a>
       </div>
       <button type="button" class="back" data-reset>もう一度診断する</button>`;
     note.value = miss.length
